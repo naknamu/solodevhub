@@ -12,7 +12,6 @@ const Home = () => {
       try {
         const response = await fetch("/api/posts/published");
         const json = await response.json();
-
         setBlogPosts(json);
       } catch (err) {
         console.error(err);
@@ -20,7 +19,7 @@ const Home = () => {
     };
 
     fetchBlogPost();
-  }, [blogPosts]);
+  }, []);
 
   return (
     <div className="home">

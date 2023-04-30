@@ -247,12 +247,22 @@ button {
   box-shadow: var(--shadow-1);
 }
 
+.blogPost-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.1);
+}
+
 .blog-category {
   background-color: var(--background-secondary);
   color: var(--foreground-secondary);
   border-radius: var(--radius-6);
   padding: 0.25rem 0.75rem;
   width: 12em;
+}
+
+.blog-category:hover {
+    background: var(--foreground-secondary);
+    color: var(--action-secondary);
 }
 
 .text-tiny {
@@ -270,6 +280,11 @@ button {
 
 .blogPost-card .h3 {
   line-height: 1.4;
+}
+
+.blogPost-card .h3:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 
 .blogPost-card .h4 {

@@ -1,8 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
 
-// pages & components
+// pages
 import Home from "./pages/Home";
+import BlogPostDetail from "./pages/BlogPostDetail";
+
+// components
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -12,8 +16,10 @@ function App() {
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/posts/:postid" element={<BlogPostDetail />} />
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
     </div>
   );
