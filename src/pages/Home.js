@@ -20,7 +20,7 @@ const Home = () => {
     };
 
     fetchBlogPost();
-  }, []);
+  }, [blogPosts]);
 
   return (
     <div className="home">
