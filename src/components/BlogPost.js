@@ -1,45 +1,43 @@
-// date fns
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
+const { DateTime } = require("luxon");
 
-import { Link } from "react-router-dom";
+const BlogPost = ({ blogPostDetail }) => {
+    return (  
+        <div className="blog-post">
+            <div className="container">
+                <div className="blog-head-wrapper">
+                    <button className="blog-category text-tiny">
+                        {blogPostDetail?.category.name}
+                    </button>
+                    <div className="blog-title">
+                        {blogPostDetail?.title}
+                    </div>
+                    <div className="blog-subtitle">
+                        <p className="author">
+                            by {blogPostDetail?.author}
+                        </p>
+                        <span className="separator"></span>
+                        <p className="date">
+                            {DateTime.fromJSDate(new Date(blogPostDetail?.publishedDate)).toLocaleString(DateTime.DATETIME_MED)}
+                        </p>
+                        <span className="separator"></span>
+                        <p>
+                            {blogPostDetail?.minute_read} min read
+                        </p>
+                    </div>
 
-const BlogPost = ({ blogPost }) => {
-  return (
-    <div className="blogPost-card">
+                    <div className="tag-wrapper">                
+                        {blogPostDetail?.tags.map(tag =>(
+                            <button className="blog-tags text-tiny" key={tag._id}>#{tag.name}</button>
+                        ))}
+                    </div>
 
-      <div className="blog-card-banner">
-        <img src="#" alt="Blog Post Banner" />
-      </div>
-
-      <div className="blog-content-wrapper">
-
-        <button className="blog-category text-tiny">
-          {blogPost.category.name}
-        </button>
-
-        <Link to={`/posts/${blogPost._id}`}>
-          <h3 className="h3">{blogPost.title}</h3>
-          <p>{blogPost.url}</p>
-        </Link>
-
-        <div className="wrapper">
-
-          <div className="h4">{blogPost.author}</div>
-
-          <div className="text-sm">
-            <div>
-              {formatDistanceToNow(new Date(blogPost.publishedDate), {
-                addSuffix: true,
-              })}
+                    <div className="blog-content">
+                        {blogPostDetail?.content}
+                    </div>
+                </div>
             </div>
-            <span className="separator"></span>
-            <div>{blogPost.minute_read} min read</div>
-          </div>
-
         </div>
-      </div>
-    </div>
-  );
-};
-
+    );
+}
+ 
 export default BlogPost;

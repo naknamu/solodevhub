@@ -1,4 +1,4 @@
-import BlogPost from "../components/BlogPost";
+import BlogPostCard from "./BlogPostCard";
 
 const Main = ({ blogPosts }) => {
   return (
@@ -9,7 +9,7 @@ const Main = ({ blogPosts }) => {
           <div className="blogPosts-card">
             {blogPosts &&
               blogPosts.map((blogPost) => (
-                <BlogPost blogPost={blogPost} key={blogPost._id} />
+                <BlogPostCard blogPost={blogPost} key={blogPost._id} />
               ))}
           </div>
           <div className="btn load-more">Load More</div>
