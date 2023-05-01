@@ -2,10 +2,36 @@
     border-top: 1px solid var(--action-primary);
     display: grid;
     gap: 15px;
+    margin-bottom: var(--pad-3);
 }
 
 .comment-title {
     margin-bottom: 0.5rem;
+}
+
+.comment-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 1rem;
+}
+
+.input-field {
+    border: 1px solid var(--action-primary);
+    border-radius: var(--radius-6);
+    padding: 12px;
+}
+
+.input-field:focus{
+    outline: none;
+    border: 1px solid var(--accent);
+}
+
+textarea {
+    min-height: 120px;
+    height: 120px;
+    max-height: 240px;
+    resize: vertical;
 }
 
 .comment-card {

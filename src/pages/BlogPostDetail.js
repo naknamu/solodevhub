@@ -26,8 +26,7 @@ const BlogPostDetail = () => {
             try {
                 const response = await fetch(`/api/posts/${postid}/comments`);
                 const data = await response.json();
-                setComments(data);
-                console.log(data);
+                setComments(data);  
             } catch (err) {
                 console.error(err);
             }
