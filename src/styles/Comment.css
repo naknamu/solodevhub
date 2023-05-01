@@ -1,0 +1,30 @@
+.comment .container {
+    border-top: 1px solid var(--action-primary);
+    display: grid;
+    gap: 15px;
+}
+
+.comment-title {
+    margin-bottom: 0.5rem;
+}
+
+.comment-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--action-primary);
+    padding: 12px;
+    border-radius: var(--radius-6);
+    gap: 10px;
+}
+
+.comment-head {
+    display: flex;
+    align-items: center;
+    color: var(--foreground-secondary);
+    font-size: var(--fs-4);
+    gap: 5px;
+}
+
+.comment-name {
+    font-weight: 600;
+}
