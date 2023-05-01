@@ -54,3 +54,14 @@ textarea {
 .comment-name {
     font-weight: 600;
 }
+
+.errorField {
+    border: 1px solid red;
+}
+
+.error {
+    font-size: var(--fs-5);
+    color: red;
+    transform: translateY(-10px);
+    padding-inline: 10px;
+}

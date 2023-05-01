@@ -21,26 +21,27 @@ const BlogPostDetail = () => {
             }
         }
 
-        // Fetch comments
-        const fetchComments = async() => {
-            try {
-                const response = await fetch(`/api/posts/${postid}/comments`);
-                const data = await response.json();
-                setComments(data);  
-            } catch (err) {
-                console.error(err);
-            }
-        }
-
         fetchBlogDetail();
         fetchComments();
-
+        
+    // eslint-disable-next-line
     }, [postid]);
+
+    // Fetch comments
+    const fetchComments = async() => {
+        try {
+            const response = await fetch(`/api/posts/${postid}/comments`);
+            const data = await response.json();
+            setComments(data);  
+        } catch (err) {
+            console.error(err);
+        }
+    }
 
     return ( 
         <div className="blogPostDetail">
             <BlogPost blogPostDetail={blogPostDetail} />
-            <Comment comments={comments}/>
+            <Comment comments={comments} postid={postid} fetchComments={fetchComments} />
         </div>
     );
 }
