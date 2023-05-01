@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Footer from "../components/Footer";
 
 import Hero from "../components/Hero";
 import Main from "../components/Main";
@@ -25,7 +24,6 @@ const Home = () => {
     <div className="home">
       <Hero />
       <Main blogPosts={blogPosts} />
-      <Footer />
     </div>
   );
 };

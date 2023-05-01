@@ -1,0 +1,31 @@
+.blog-head-wrapper {
+    display: grid;
+    gap: 15px;
+}
+
+.blog-title{
+    font-weight: 700;
+    font-size: var(--fs-1);
+    line-height: 1.4;
+}
+
+.blog-subtitle {
+    display: flex;
+    align-items: center;
+    color: var(--foreground-tertiary);
+    font-size: var(--fs-4);
+    gap: 5px;
+}
+
+.blog-tags {
+    color: var(--foreground-secondary);
+}
+
+.blog-tags:hover{
+    text-decoration: underline;
+}
+
+.blog-content {
+    font-size: var(--fs-0);
+    font-family: var(--ff-sans-serif);
+}
