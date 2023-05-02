@@ -1,0 +1,41 @@
+.category-detail .container {
+    display: grid;
+    gap: 20px;
+}
+
+.blogList-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: var(--pad-3);
+}
+
+.blogList-card {
+    background-color: var(--background-secondary);
+    box-shadow: var(--shadow-3);
+    border-radius: var(--radius-6);
+    padding: 12px;
+}
+
+.blogList-card:hover {
+    transform: translateY(-5px);
+}
+
+.blogList-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.blogList-title {
+    font-size: var(--fs-4);
+    font-weight: 500;
+}
+
+.blogList-title:hover {
+    text-decoration: underline;
+}
+
+.blogList-date {
+    font-size: var(--fs-5);
+}

@@ -1,12 +1,19 @@
-.comment .container {
-    border-top: 1px solid var(--action-primary);
-    display: grid;
-    gap: 15px;
+.comment {
     margin-bottom: var(--pad-3);
 }
 
-.comment-title {
-    margin-bottom: 0.5rem;
+.comment .container {
+    display: grid;
+    gap: 15px;
+}
+
+.comment-form {
+    border-top: 1px solid var(--action-primary);
+    background: var(--background-secondary);
+}
+
+.comment-form-title {
+    margin-bottom: 1rem;
 }
 
 .comment-form form {
@@ -20,6 +27,7 @@
     border: 1px solid var(--action-primary);
     border-radius: var(--radius-6);
     padding: 12px;
+    background: var(--background-primary);
 }
 
 .input-field:focus{
@@ -32,6 +40,10 @@ textarea {
     height: 120px;
     max-height: 240px;
     resize: vertical;
+}
+
+.comment-title {
+    margin-bottom: 0.5rem;
 }
 
 .comment-card {

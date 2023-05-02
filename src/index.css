@@ -1,5 +1,6 @@
 @import './styles/BlogPost.css';
 @import './styles/Comment.css';
+@import './styles/CategoryDetail.css';
 
 /** CUSTOM PROPERTY **/
 
@@ -45,6 +46,7 @@
   /** box shadow **/
   --shadow-1: 0 0 20px hsla(216, 14%, 14%, 0.05);
   --shadow-2: 0 4px 28px hsla(216, 14%, 14%, 0.07);
+  --shadow-3: 2px 2px 4px rgba(0, 0, 0, 0.1);
 
   /** padding **/
   --pad-1: 1rem;
