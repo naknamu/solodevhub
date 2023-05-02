@@ -47,6 +47,7 @@
   --shadow-1: 0 0 20px hsla(216, 14%, 14%, 0.05);
   --shadow-2: 0 4px 28px hsla(216, 14%, 14%, 0.07);
   --shadow-3: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-4: 0 1px 3px rgba(0, 0, 0, 0.1);
 
   /** padding **/
   --pad-1: 1rem;
@@ -285,7 +286,7 @@ button
   padding: 12px;
   margin-block-end: 20px;
   border-radius: var(--radius-8);
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--shadow-4);
 }
 
 .blogPost-card:hover {
