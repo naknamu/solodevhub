@@ -14,7 +14,9 @@ const BlogPostCard = ({ blogPost }) => {
       <div className="blog-content-wrapper">
 
         <button className="blog-category text-tiny">
-          {blogPost.category.name}
+          <Link to={`/categories/${blogPost.category._id}`}>
+            {blogPost.category.name}
+          </Link>
         </button>
 
         <Link to={`/posts/${blogPost._id}`}>
