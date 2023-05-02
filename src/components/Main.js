@@ -1,8 +1,9 @@
 import BlogPostCard from "./BlogPostCard";
+import { forwardRef } from "react";
 
-const Main = ({ blogPosts }) => {
+const Main = forwardRef(({ blogPosts }, ref) => {
   return (
-    <div className="main">
+    <div className="main" ref={ref}>
       <div className="container">
         <div className="blog">
           <h2 className="h2">Latest Blog Posts</h2>
@@ -17,6 +18,6 @@ const Main = ({ blogPosts }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Main;

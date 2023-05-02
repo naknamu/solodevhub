@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import Hero from "../components/Hero";
 import Main from "../components/Main";
 
 const Home = () => {
   const [blogPosts, setBlogPosts] = useState(null);
+  const parentRef = useRef(null);
+  const childRef = useRef(null);
 
   useEffect(() => {
     const fetchBlogPost = async () => {
@@ -20,10 +22,14 @@ const Home = () => {
     fetchBlogPost();
   }, []);
 
+  const scrollToChild = () => {
+    childRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="home">
-      <Hero />
-      <Main blogPosts={blogPosts} />
+      <Hero ref={parentRef} scrollToChild={scrollToChild}/>
+      <Main blogPosts={blogPosts} ref={childRef} />
     </div>
   );
 };

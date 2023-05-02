@@ -1,8 +1,10 @@
 import { BsFacebook, BsTwitter, BsMessenger, BsReddit } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { forwardRef } from "react";
 
-const Hero = () => {
+const Hero = forwardRef(({scrollToChild}, ref) => {
   return (
-    <div className="hero">
+    <div className="hero" ref={ref}>
       <div className="container">
         <h1 className="h1">
           Welcome to <b>SoloDevHub!</b>
@@ -15,8 +17,8 @@ const Hero = () => {
         </div>
 
         <div className="btn-group">
-          <button className="btn btn-primary">Explore blog</button>
-          <button className="btn btn-secondary">Join us</button>
+          <button className="btn btn-primary" onClick={scrollToChild}>Explore blog</button>
+          <button className="btn btn-secondary"><Link to={"https://www.naknamu.com/"} target="_blank">About me</Link></button>
         </div>
 
         <div className="social-media">
@@ -33,6 +35,6 @@ const Hero = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Hero;

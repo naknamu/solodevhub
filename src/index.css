@@ -47,6 +47,8 @@
   --shadow-2: 0 4px 28px hsla(216, 14%, 14%, 0.07);
 
   /** padding **/
+  --pad-1: 1rem;
+  --pad-2: 2rem;
   --pad-3: 3rem;
   --pad-4: 4rem;
   --pad-5: 5rem;
@@ -72,6 +74,7 @@ html {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
@@ -210,7 +213,7 @@ button
 
 .hero {
   text-align: center;
-  padding-bottom: var(--pad-4);
+  padding-bottom: var(--pad-3);
 }
 
 .hero .h1 {
@@ -232,7 +235,7 @@ button
   gap: 15px;
   justify-content: center;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .social-media .text {
@@ -252,7 +255,7 @@ button
 
 .main {
   background-color: var(--background-secondary);
-  padding-block: var(--pad-3);
+  padding-block: var(--pad-2);
 }
 
 .blog .h2 {
