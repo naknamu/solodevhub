@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import BlogListCard from '../components/BlogListCard';
+import Topic from '../components/Topic';
 
 const CategoryDetail = () => {
     const { categoryid } = useParams();
@@ -22,18 +22,8 @@ const CategoryDetail = () => {
     }, [categoryid]);
 
     return ( 
-        <div className="category-detail">
-            <div className="container">
-                <h1 className='category-title h1'>{category.name}</h1>
-                <p>{category.detail}</p>
-                <h2 className='h2'>Blog Posts</h2>
-                <p>These are the blog posts under this category:</p>
-                <ul className='blogList-wrapper'>
-                    {blogPosts && blogPosts.map((blogPost) => (
-                        <BlogListCard blogPost={blogPost} key={blogPost._id} />
-                    ))}
-                </ul>
-            </div>
+        <div className="categoryDetail">
+            <Topic topic={category} blogPosts={blogPosts} topicName={"category"}/>
         </div>
     );
 }

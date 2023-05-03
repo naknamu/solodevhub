@@ -8,6 +8,7 @@ import BlogPostDetail from "./pages/BlogPostDetail";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CategoryDetail from "./pages/CategoryDetail";
+import TagDetail from "./pages/TagDetail";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/posts/:postid" element={<BlogPostDetail />} />
             <Route path="/categories/:categoryid" element={<CategoryDetail />} />
+            <Route path="/tags/:tagid" element={<TagDetail />} />
           </Routes>
         </div>
         <Footer />

@@ -1,4 +1,5 @@
 import CategoryButton from "./CategoryButton";
+import { Link } from "react-router-dom";
 
 const { DateTime } = require("luxon");
 
@@ -11,11 +12,11 @@ const BlogPost = ({ blogPostDetail }) => {
                     <CategoryButton category={blogPostDetail.category} />
 
                     <div className="blog-title">
-                        {blogPostDetail?.title}
+                        {blogPostDetail.title}
                     </div>
                     <div className="blog-subtitle">
                         <p className="author">
-                            by {blogPostDetail?.author}
+                            by {blogPostDetail.author}
                         </p>
                         <span className="separator"></span>
                         <p className="date">
@@ -29,7 +30,9 @@ const BlogPost = ({ blogPostDetail }) => {
 
                     <div className="tag-wrapper">                
                         {blogPostDetail.tags.map(tag =>(
-                            <button className="blog-tags text-tiny" key={tag._id}>#{tag.name}</button>
+                            <button className="blog-tags text-tiny" key={tag._id}>
+                                <Link to={`/tags/${tag._id}`}>#{tag.name}</Link>
+                            </button>
                         ))}
                     </div>
 

@@ -1,8 +1,12 @@
-import { BsFacebook, BsTwitter, BsMessenger, BsReddit } from "react-icons/bs";
+import { BsFacebook, BsTwitter, BsReddit } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { forwardRef } from "react";
 
+import { FacebookShareButton, TwitterShareButton, RedditShareButton } from 'react-share';
+
 const Hero = forwardRef(({scrollToChild}, ref) => {
+  const shareUrl = "https://www.naknamu.com/";
+
   return (
     <div className="hero" ref={ref}>
       <div className="container">
@@ -26,10 +30,15 @@ const Hero = forwardRef(({scrollToChild}, ref) => {
             Help us by sharing this site to your friends:{" "}
           </p>
           <div className="icon">
-            <BsFacebook />
-            <BsTwitter />
-            <BsMessenger />
-            <BsReddit />
+            <FacebookShareButton url={shareUrl}>
+              <BsFacebook />
+            </FacebookShareButton>
+            <TwitterShareButton url={shareUrl}>
+              <BsTwitter />
+            </TwitterShareButton>
+            <RedditShareButton url={shareUrl}>
+              <BsReddit />
+            </RedditShareButton>
           </div>
         </div>
       </div>
