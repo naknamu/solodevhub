@@ -40,7 +40,7 @@ const BlogPostDetail = () => {
 
     return ( 
         <div className="blogPostDetail">
-            <BlogPost blogPostDetail={blogPostDetail} />
+            {blogPostDetail && <BlogPost blogPostDetail={blogPostDetail} />}
             <Comment comments={comments} postid={postid} fetchComments={fetchComments} />
         </div>
     );

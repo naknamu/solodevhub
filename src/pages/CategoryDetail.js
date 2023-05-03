@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from "react-router-dom";
-
-const { DateTime } = require("luxon");
+import BlogListCard from '../components/BlogListCard';
 
 const CategoryDetail = () => {
     const { categoryid } = useParams();
@@ -14,7 +12,6 @@ const CategoryDetail = () => {
             const response = await fetch(`/api/categories/${categoryid}`);
             const data = await response.json();
 
-            console.log(data);
             setCategory(data.category);
 
             // Filter only published posts
@@ -32,13 +29,8 @@ const CategoryDetail = () => {
                 <h2 className='h2'>Blog Posts</h2>
                 <p>These are the blog posts under this category:</p>
                 <ul className='blogList-wrapper'>
-                    {blogPosts.map((blogPost) => (
-                        <li className='blogList-card' key={blogPost._id}>
-                            <div className="blogList-card-wrapper">
-                                <Link to={`/posts/${blogPost._id}`} className="blogList-title">{blogPost.title}</Link>
-                                <p className='blogList-date'>Published Date: {DateTime.fromJSDate(new Date(blogPost?.publishedDate)).toLocaleString(DateTime.DATE_MED)}</p>
-                            </div>
-                        </li>
+                    {blogPosts && blogPosts.map((blogPost) => (
+                        <BlogListCard blogPost={blogPost} key={blogPost._id} />
                     ))}
                 </ul>
             </div>

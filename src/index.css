@@ -258,7 +258,7 @@ button
 
 .main {
   background-color: var(--background-secondary);
-  padding-block: var(--pad-2);
+  padding-block: var(--pad-1);
 }
 
 .blog .h2 {

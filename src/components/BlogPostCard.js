@@ -2,6 +2,7 @@
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 import { Link } from "react-router-dom";
+import CategoryButton from "./CategoryButton";
 
 const BlogPostCard = ({ blogPost }) => {
   return (
@@ -13,11 +14,7 @@ const BlogPostCard = ({ blogPost }) => {
 
       <div className="blog-content-wrapper">
 
-        <button className="blog-category text-tiny">
-          <Link to={`/categories/${blogPost.category._id}`}>
-            {blogPost.category.name}
-          </Link>
-        </button>
+        <CategoryButton category={blogPost.category} />
 
         <Link to={`/posts/${blogPost._id}`}>
           <h3 className="h3">{blogPost.title}</h3>

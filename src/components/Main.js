@@ -13,7 +13,7 @@ const Main = forwardRef(({ blogPosts }, ref) => {
                 <BlogPostCard blogPost={blogPost} key={blogPost._id} />
               ))}
           </div>
-          <div className="btn load-more">Load More</div>
+          {/* <div className="btn load-more">Load More</div> */}
         </div>
       </div>
     </div>

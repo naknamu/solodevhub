@@ -1,3 +1,5 @@
+import CategoryButton from "./CategoryButton";
+
 const { DateTime } = require("luxon");
 
 const BlogPost = ({ blogPostDetail }) => {
@@ -5,9 +7,9 @@ const BlogPost = ({ blogPostDetail }) => {
         <div className="blog-post">
             <div className="container">
                 <div className="blog-head-wrapper">
-                    <button className="blog-category text-tiny">
-                        {blogPostDetail?.category.name}
-                    </button>
+                    
+                    <CategoryButton category={blogPostDetail.category} />
+
                     <div className="blog-title">
                         {blogPostDetail?.title}
                     </div>
@@ -17,22 +19,22 @@ const BlogPost = ({ blogPostDetail }) => {
                         </p>
                         <span className="separator"></span>
                         <p className="date">
-                            {DateTime.fromJSDate(new Date(blogPostDetail?.publishedDate)).toLocaleString(DateTime.DATETIME_MED)}
+                            {DateTime.fromJSDate(new Date(blogPostDetail.publishedDate)).toLocaleString(DateTime.DATETIME_MED)}
                         </p>
                         <span className="separator"></span>
                         <p>
-                            {blogPostDetail?.minute_read} min read
+                            {blogPostDetail.minute_read} min read
                         </p>
                     </div>
 
                     <div className="tag-wrapper">                
-                        {blogPostDetail?.tags.map(tag =>(
+                        {blogPostDetail.tags.map(tag =>(
                             <button className="blog-tags text-tiny" key={tag._id}>#{tag.name}</button>
                         ))}
                     </div>
 
                     <div className="blog-content">
-                        {blogPostDetail?.content}
+                        {blogPostDetail.content}
                     </div>
                 </div>
             </div>
