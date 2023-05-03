@@ -1,6 +1,6 @@
-@import './styles/BlogPost.css';
-@import './styles/Comment.css';
-@import './styles/CategoryDetail.css';
+@import "./styles/BlogPost.css";
+@import "./styles/Comment.css";
+@import "./styles/CategoryDetail.css";
 
 /** CUSTOM PROPERTY **/
 
@@ -35,7 +35,9 @@
   --fs-5: 0.75rem;
 
   /** font family **/
-  --ff-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ff-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 
   /** border radius **/
   --radius-circle: 50%;
@@ -81,11 +83,13 @@ a {
   text-decoration: none;
 }
 
-li { list-style: none; }
+li {
+  list-style: none;
+}
 
-button
-,input
-,textarea {
+button,
+input,
+textarea {
   font: inherit;
   border: none;
   background: none;
@@ -159,8 +163,8 @@ button
 }
 
 .blog-category:hover {
-    background: var(--foreground-secondary);
-    color: var(--action-secondary);
+  background: var(--foreground-secondary);
+  color: var(--action-secondary);
 }
 
 .text-tiny {
@@ -199,15 +203,15 @@ button
 }
 
 .menu-btn {
-    background: var(--action-secondary);
-    color: var(--foreground-tertiary);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 25px;
+  background: var(--action-secondary);
+  color: var(--foreground-tertiary);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 25px;
 }
 
 /** HOME **/
@@ -290,8 +294,8 @@ button
 }
 
 .blogPost-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.1);
 }
 
 .blogPost-card .wrapper {
@@ -307,8 +311,8 @@ button
 }
 
 .blogPost-card .h3:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 .blogPost-card .h4 {
@@ -335,37 +339,41 @@ button
 /** FOOTER SECTION **/
 
 .footer .container {
-    padding: var(--pad-4) 15px;
-    display: grid;
-    gap: 30px;
-    background: var(--background-secondary);
-    border-top: 1px solid var(--action-primary);
+  padding: var(--pad-4) 15px;
+  display: grid;
+  gap: 30px;
+  background: var(--background-secondary);
+  border-top: 1px solid var(--action-primary);
 }
 
 .footer .wrapper {
-    text-align: center;
+  text-align: center;
 }
 
 .footer .logo-wrapper {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .footer-text {
-    color: var(--foreground-secondary);
-    max-width: 300px;
-    margin-inline: auto;
-    margin: auto;
+  color: var(--foreground-secondary);
+  max-width: 300px;
+  margin-inline: auto;
+  margin: auto;
 }
 
 .footer-title {
-    color: var(--foreground-primary);
-    font-weight: 700;
-    margin-bottom: 0.4rem;
+  color: var(--foreground-primary);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
 }
 
-.footer-link { color: var(--foreground-secondary); }
+.footer-link {
+  color: var(--foreground-secondary);
+}
 
-.footer-link:hover { color: var(--accent); }
+.footer-link:hover {
+  color: var(--accent);
+}
 
 .copyright {
   padding: 1rem;

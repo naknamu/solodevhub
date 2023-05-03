@@ -7,13 +7,11 @@ import CategoryButton from "./CategoryButton";
 const BlogPostCard = ({ blogPost }) => {
   return (
     <div className="blogPost-card">
-
       <div className="blog-card-banner">
         <img src="#" alt="Blog Post Banner" />
       </div>
 
       <div className="blog-content-wrapper">
-
         <CategoryButton category={blogPost.category} />
 
         <Link to={`/posts/${blogPost._id}`}>
@@ -22,7 +20,6 @@ const BlogPostCard = ({ blogPost }) => {
         </Link>
 
         <div className="wrapper">
-
           <div className="h4">{blogPost.author}</div>
 
           <div className="text-sm">
@@ -34,7 +31,6 @@ const BlogPostCard = ({ blogPost }) => {
             <span className="separator"></span>
             <div>{blogPost.minute_read} min read</div>
           </div>
-
         </div>
       </div>
     </div>

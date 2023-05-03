@@ -2,9 +2,13 @@ import { BsFacebook, BsTwitter, BsReddit } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { forwardRef } from "react";
 
-import { FacebookShareButton, TwitterShareButton, RedditShareButton } from 'react-share';
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  RedditShareButton,
+} from "react-share";
 
-const Hero = forwardRef(({scrollToChild}, ref) => {
+const Hero = forwardRef(({ scrollToChild }, ref) => {
   const shareUrl = "https://www.naknamu.com/";
 
   return (
@@ -21,8 +25,14 @@ const Hero = forwardRef(({scrollToChild}, ref) => {
         </div>
 
         <div className="btn-group">
-          <button className="btn btn-primary" onClick={scrollToChild}>Explore blog</button>
-          <button className="btn btn-secondary"><Link to={"https://www.naknamu.com/"} target="_blank">About me</Link></button>
+          <button className="btn btn-primary" onClick={scrollToChild}>
+            Explore blog
+          </button>
+          <button className="btn btn-secondary">
+            <Link to={"https://www.naknamu.com/"} target="_blank">
+              About me
+            </Link>
+          </button>
         </div>
 
         <div className="social-media">

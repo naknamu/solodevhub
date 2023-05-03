@@ -23,12 +23,12 @@ const Home = () => {
   }, []);
 
   const scrollToChild = () => {
-    childRef.current.scrollIntoView({ behavior: 'smooth' });
+    childRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="home">
-      <Hero ref={parentRef} scrollToChild={scrollToChild}/>
+      <Hero ref={parentRef} scrollToChild={scrollToChild} />
       <Main blogPosts={blogPosts} ref={childRef} />
     </div>
   );
