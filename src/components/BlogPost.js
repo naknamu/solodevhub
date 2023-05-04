@@ -1,9 +1,37 @@
 import CategoryButton from "./CategoryButton";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const { DateTime } = require("luxon");
 
-const BlogPost = ({ blogPostDetail }) => {
+const BlogPost = ({ postid }) => {
+  const [blogPostDetail, setBlogPostDetail] = useState(null);
+
+  useEffect(() => {
+    // Fetch data from blog api
+    const fetchBlogDetail = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/${postid}`);
+        const data = await response.json();
+        setBlogPostDetail(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchBlogDetail();
+  }, [postid])
+
+  // Render when blogPostDetail is null
+  if (!blogPostDetail) {
+    return (
+    <div className="loading-message">
+        <div className="container">
+          Fetching blog post...
+        </div>
+    </div>);
+  }
+
   return (
     <div className="blog-post">
       <div className="container">

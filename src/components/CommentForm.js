@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CommentForm = ({ postid, setComments }) => {
+const CommentForm = ({ postid, fetchComments }) => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   // for the error message shown to the user
@@ -43,16 +43,6 @@ const CommentForm = ({ postid, setComments }) => {
       data.message?.msg ? setIsMessageError(true) : setIsMessageError(false);
     }
   };
-
-  const fetchComments = async () => {
-    try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/${postid}/comments`);
-      const data = await response.json();
-      setComments(data);
-    } catch(error) {
-      console.error(error);
-    }
-  }
 
   return (
     <div className="comment-form">
