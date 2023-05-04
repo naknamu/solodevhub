@@ -187,6 +187,7 @@ textarea {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--action-primary);
+  position: relative;
 }
 
 .logo-wrapper {
@@ -202,7 +203,7 @@ textarea {
   color: var(--accent);
 }
 
-.menu-btn {
+.nav-btn {
   background: var(--action-secondary);
   color: var(--foreground-tertiary);
   width: 40px;
@@ -212,6 +213,50 @@ textarea {
   align-items: center;
   border-radius: 50%;
   font-size: 25px;
+}
+
+.nav-btn:hover {
+  background: var(--accent);
+  color: var(--white);
+}
+
+/** Mobile Nav **/
+
+.mobile-nav {
+  background: var(--background-primary);
+  position: fixed;
+  z-index: 5;
+  inset: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: .5s cubic-bezier(1,0,.3,.7);
+}
+
+.mobile-nav.active {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.mobile-nav-wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.closeBtn {
+  align-self: flex-end;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
 }
 
 /** HOME **/
