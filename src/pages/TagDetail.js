@@ -9,7 +9,7 @@ const TagDetail = () => {
 
   useEffect(() => {
     const fetchTagDetails = async () => {
-      const response = await fetch(`/api/tags/${tagid}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/tags/${tagid}`);
       const data = await response.json();
 
       setTag(data.tag);

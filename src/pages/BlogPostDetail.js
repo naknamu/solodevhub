@@ -12,7 +12,7 @@ const BlogPostDetail = () => {
     // Fetch data from blog api
     const fetchBlogDetail = async () => {
       try {
-        const response = await fetch(`/api/posts/${postid}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/${postid}`);
         const data = await response.json();
         setBlogPostDetail(data);
       } catch (err) {
@@ -29,7 +29,7 @@ const BlogPostDetail = () => {
   // Fetch comments
   const fetchComments = async () => {
     try {
-      const response = await fetch(`/api/posts/${postid}/comments`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/${postid}/comments`);
       const data = await response.json();
       setComments(data);
     } catch (err) {

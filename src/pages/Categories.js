@@ -6,7 +6,7 @@ const Categories = () => {
 
     useEffect(() => {
         const fetchCategories = async () => {
-            const response = await fetch("api/categories/");
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/categories/`);
             const data = await response.json();
 
             setCategories(data);

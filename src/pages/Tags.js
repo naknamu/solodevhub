@@ -6,7 +6,7 @@ const Tags = () => {
 
     useEffect(() => {
         const fetchTags = async () => {
-            const response = await fetch("api/tags/");
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/tags/`);
             const data = await response.json();
 
             setTags(data);

@@ -9,7 +9,7 @@ const CategoryDetail = () => {
 
   useEffect(() => {
     const fetchCategoryDetails = async () => {
-      const response = await fetch(`/api/categories/${categoryid}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/categories/${categoryid}`);
       const data = await response.json();
 
       setCategory(data.category);
