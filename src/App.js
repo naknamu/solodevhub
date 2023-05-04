@@ -6,6 +6,7 @@ import BlogPostDetail from "./pages/BlogPostDetail";
 import CategoryDetail from "./pages/CategoryDetail";
 import TagDetail from "./pages/TagDetail";
 import Categories from "./pages/Categories";
+import Tags from "./pages/Tags";
 
 // components
 import Navbar from "./components/Navbar";
@@ -28,6 +29,7 @@ function App() {
             />
             <Route path="/tags/:tagid" element={<TagDetail />} />
             <Route path="/categories" element={<Categories />} />
+            <Route path="/tags" element={<Tags />} />
           </Routes>
         </div>
         <Footer />
