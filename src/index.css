@@ -1,6 +1,9 @@
 @import "./styles/BlogPost.css";
 @import "./styles/Comment.css";
-@import "./styles/CategoryDetail.css";
+@import "./styles/Topic.css";
+@import "./styles/TopicList.css";
+@import "./styles/BlogListCard.css";
+@import "./styles/Categories.css";
 
 /** CUSTOM PROPERTY **/
 

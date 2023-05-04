@@ -36,7 +36,7 @@ const Navbar = () => {
 
             <div className="nav-links">
               <Link to="/" onClick={() => handleCloseClick()}>Home</Link>
-              <Link>Categories</Link>
+              <Link to="/categories" onClick={() => handleCloseClick()}>Categories</Link>
               <Link>Tags</Link>
             </div>
 

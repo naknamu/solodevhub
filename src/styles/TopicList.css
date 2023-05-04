@@ -1,0 +1,19 @@
+.topicList-wrapper {
+    display: grid;
+    gap: 20px;
+}
+
+.topicList-card {
+    background-color: var(--background-secondary);
+    box-shadow: var(--shadow-3);
+    border-radius: var(--radius-6);
+    padding: 12px;
+}
+
+.topicList-card:hover {
+    transform: translateY(-5px);
+}
+
+.topicList-card a:hover {
+    text-decoration: underline;
+}
