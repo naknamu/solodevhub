@@ -9,33 +9,24 @@ const BlogPostDetail = () => {
   const [comments, setComments] = useState(null);
 
   useEffect(() => {
-    // Fetch data from blog api
-    const fetchBlogDetail = async () => {
+    // Fetch Blog Posts and Comments concurrently
+    const fetchBlogAndComments = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/${postid}`);
-        const data = await response.json();
-        setBlogPostDetail(data);
-      } catch (err) {
-        console.error(err);
+        const [postResponse, commentsResponse] = await Promise.all([
+          fetch(`${process.env.REACT_APP_API_URL}/api/posts/${postid}`),
+          fetch(`${process.env.REACT_APP_API_URL}/api/posts/${postid}/comments`)
+        ]);
+        const postData = await postResponse.json();
+        const commentsData = await commentsResponse.json();
+        setBlogPostDetail(postData);
+        setComments(commentsData);
+      } catch (error) {
+        console.error(error);
       }
     };
-
-    fetchBlogDetail();
-    fetchComments();
-
-    // eslint-disable-next-line
+  
+    fetchBlogAndComments();
   }, [postid]);
-
-  // Fetch comments
-  const fetchComments = async () => {
-    try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/${postid}/comments`);
-      const data = await response.json();
-      setComments(data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
 
   return (
     <div className="blogPostDetail">
@@ -43,7 +34,7 @@ const BlogPostDetail = () => {
       <Comment
         comments={comments}
         postid={postid}
-        fetchComments={fetchComments}
+        setComments={setComments}
       />
     </div>
   );

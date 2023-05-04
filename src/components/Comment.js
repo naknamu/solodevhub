@@ -1,10 +1,10 @@
 import CommentCard from "./CommentCard";
 import CommentForm from "./CommentForm";
 
-const Comment = ({ comments, postid, fetchComments }) => {
+const Comment = ({ comments, postid, setComments }) => {
   return (
     <div className="comment">
-      <CommentForm postid={postid} fetchComments={fetchComments} />
+      <CommentForm postid={postid} setComments={setComments} />
 
       <div className="container">
         <div className="comment-title h3">
