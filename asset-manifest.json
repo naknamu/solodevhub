@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/solodevhub/static/css/main.1c9391db.css",
+    "main.js": "/solodevhub/static/js/main.a17cde73.js",
+    "index.html": "/solodevhub/index.html",
+    "main.1c9391db.css.map": "/solodevhub/static/css/main.1c9391db.css.map",
+    "main.a17cde73.js.map": "/solodevhub/static/js/main.a17cde73.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1c9391db.css",
+    "static/js/main.a17cde73.js"
+  ]
+}
