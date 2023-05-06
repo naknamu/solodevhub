@@ -1,4 +1,5 @@
 import { useState } from "react";
+import config from "../config/config";
 
 const CommentForm = ({ postid, fetchComments }) => {
   const [name, setName] = useState("");
@@ -15,8 +16,10 @@ const CommentForm = ({ postid, fetchComments }) => {
 
     const comment = { name, message };
 
+    const apiUrl = config.apiUrl;
+
     const response = await fetch(
-      `https://blog-api-production-189.up.railway.app/api/posts/${postid}/comment/create`,
+      `${apiUrl}/posts/${postid}/comment/create`,
       {
         method: "POST",
         body: JSON.stringify(comment),

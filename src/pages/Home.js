@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 
 import Hero from "../components/Hero";
 import Main from "../components/Main";
+import config from "../config/config";
 
 const Home = () => {
   const [blogPosts, setBlogPosts] = useState(null);
@@ -9,10 +10,12 @@ const Home = () => {
   const childRef = useRef(null);
 
   useEffect(() => {
+
+    const apiUrl = config.apiUrl;
+    
     const fetchBlogPost = async () => {
-      const apiUrl = `https://blog-api-production-189.up.railway.app/api/posts/published`;
       try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(`${apiUrl}/posts/published`);
         const json = await response.json();
         setBlogPosts(json);
       } catch (err) {

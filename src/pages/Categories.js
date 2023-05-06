@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import TopicList from "../components/TopicList";
+import config from "../config/config";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     const fetchCategories = async () => {
+      const apiUrl = config.apiUrl;
       const response = await fetch(
-        `https://blog-api-production-189.up.railway.app/api/categories/`
+        `${apiUrl}/categories/`
       );
       const data = await response.json();
 

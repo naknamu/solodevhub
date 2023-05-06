@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import TopicList from "../components/TopicList";
+import config from "../config/config";
 
 const Tags = () => {
   const [tags, setTags] = useState([]);
 
   useEffect(() => {
     const fetchTags = async () => {
+
+      const apiUrl = config.apiUrl;
       const response = await fetch(
-        `https://blog-api-production-189.up.railway.app/api/tags/`
+        `${apiUrl}/tags/`
       );
       const data = await response.json();
 

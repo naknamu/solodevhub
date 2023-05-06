@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Topic from "../components/Topic";
+import config from "../config/config";
 
 const CategoryDetail = () => {
   const { categoryid } = useParams();
@@ -9,8 +10,9 @@ const CategoryDetail = () => {
 
   useEffect(() => {
     const fetchCategoryDetails = async () => {
+      const apiUrl = config.apiUrl;
       const response = await fetch(
-        `https://blog-api-production-189.up.railway.app/api/categories/${categoryid}`
+        `${apiUrl}/categories/${categoryid}`
       );
       const data = await response.json();
 

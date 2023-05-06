@@ -1,6 +1,7 @@
 import CategoryButton from "./CategoryButton";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import config from "../config/config";
 
 const { DateTime } = require("luxon");
 
@@ -9,10 +10,11 @@ const BlogPost = ({ postid }) => {
 
   useEffect(() => {
     // Fetch data from blog api
+    const apiUrl = config.apiUrl;
     const fetchBlogDetail = async () => {
       try {
         const response = await fetch(
-          `https://blog-api-production-189.up.railway.app/api/posts/${postid}`
+          `${apiUrl}/posts/${postid}`
         );
         const data = await response.json();
         setBlogPostDetail(data);

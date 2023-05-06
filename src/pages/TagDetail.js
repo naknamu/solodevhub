@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Topic from "../components/Topic";
+import config from "../config/config";
 
 const TagDetail = () => {
   const { tagid } = useParams();
@@ -9,8 +10,10 @@ const TagDetail = () => {
 
   useEffect(() => {
     const fetchTagDetails = async () => {
+
+      const apiUrl = config.apiUrl;
       const response = await fetch(
-        `https://blog-api-production-189.up.railway.app/api/tags/${tagid}`
+        `${apiUrl}/tags/${tagid}`
       );
       const data = await response.json();
 

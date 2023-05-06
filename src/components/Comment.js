@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CommentCard from "./CommentCard";
 import CommentForm from "./CommentForm";
+import config from "../config/config";
 
 const Comment = ({ postid }) => {
   const [comments, setComments] = useState(null);
@@ -8,8 +9,9 @@ const Comment = ({ postid }) => {
   // Fetch comments
   const fetchComments = async () => {
     try {
+      const apiUrl = config.apiUrl;
       const response = await fetch(
-        `https://blog-api-production-189.up.railway.app/api/posts/${postid}/comments`
+        `${apiUrl}/posts/${postid}/comments`
       );
       const data = await response.json();
       setComments(data);
