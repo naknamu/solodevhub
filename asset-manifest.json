@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/solodevhub/static/css/main.1c9391db.css",
-    "main.js": "/solodevhub/static/js/main.26cae882.js",
-    "index.html": "/solodevhub/index.html",
-    "main.1c9391db.css.map": "/solodevhub/static/css/main.1c9391db.css.map",
-    "main.26cae882.js.map": "/solodevhub/static/js/main.26cae882.js.map"
+    "main.css": "/static/css/main.1c9391db.css",
+    "main.js": "/static/js/main.68c8890d.js",
+    "index.html": "/index.html",
+    "main.1c9391db.css.map": "/static/css/main.1c9391db.css.map",
+    "main.68c8890d.js.map": "/static/js/main.68c8890d.js.map"
   },
   "entrypoints": [
     "static/css/main.1c9391db.css",
-    "static/js/main.26cae882.js"
+    "static/js/main.68c8890d.js"
   ]
 }
