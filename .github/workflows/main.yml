@@ -33,3 +33,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+          
+      - name: Debug environment variables
+        run: |
+          echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
+          echo "REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}"
