@@ -11,12 +11,14 @@ import Tags from "./pages/Tags";
 // components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Navbar />
+        <ScrollToTop>
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -30,6 +32,7 @@ function App() {
             <Route path="/tags" element={<Tags />} />
           </Routes>
         </div>
+        </ScrollToTop>
         <Footer />
       </BrowserRouter>
     </div>
