@@ -8,7 +8,9 @@ const Comment = ({ postid }) => {
   // Fetch comments
   const fetchComments = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/${postid}/comments`);
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/posts/${postid}/comments`
+      );
       const data = await response.json();
       setComments(data);
     } catch (err) {
@@ -18,8 +20,8 @@ const Comment = ({ postid }) => {
 
   useEffect(() => {
     fetchComments();
-  // eslint-disable-next-line
-  }, [postid])
+    // eslint-disable-next-line
+  }, [postid]);
 
   return (
     <div className="comment">

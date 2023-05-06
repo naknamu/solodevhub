@@ -6,11 +6,11 @@ const Navbar = () => {
 
   const handleMenuClick = () => {
     setMenu(true);
-  }
+  };
 
   const handleCloseClick = () => {
     setMenu(false);
-  }
+  };
 
   return (
     <header className="header">
@@ -21,28 +21,36 @@ const Navbar = () => {
         </Link>
 
         <div className="nav-btn">
-          <span className="material-symbols-outlined" onClick={() => handleMenuClick()}>menu</span>
+          <span
+            className="material-symbols-outlined"
+            onClick={() => handleMenuClick()}
+          >
+            menu
+          </span>
         </div>
 
-         
         <div className={`mobile-nav ${menu ? "active" : ""}`}>
           <div className="mobile-nav-wrapper">
-
-            <div className="nav-btn closeBtn" onClick={() => handleCloseClick()}>
-              <span className="material-symbols-outlined">
-                close
-              </span>
+            <div
+              className="nav-btn closeBtn"
+              onClick={() => handleCloseClick()}
+            >
+              <span className="material-symbols-outlined">close</span>
             </div>
 
             <div className="nav-links">
-              <Link to="/" onClick={() => handleCloseClick()}>Home</Link>
-              <Link to="/categories" onClick={() => handleCloseClick()}>Categories</Link>
-              <Link to="/tags" onClick={() => handleCloseClick()}>Tags</Link>
+              <Link to="/" onClick={() => handleCloseClick()}>
+                Home
+              </Link>
+              <Link to="/categories" onClick={() => handleCloseClick()}>
+                Categories
+              </Link>
+              <Link to="/tags" onClick={() => handleCloseClick()}>
+                Tags
+              </Link>
             </div>
-
           </div>
         </div>
-        
       </div>
     </header>
   );

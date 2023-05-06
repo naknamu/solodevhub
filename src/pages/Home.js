@@ -10,7 +10,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchBlogPost = async () => {
-      const apiUrl = `${process.env.REACT_APP_API_URL}/api/posts/published`
+      const apiUrl = `${process.env.REACT_APP_API_URL}/api/posts/published`;
       try {
         const response = await fetch(apiUrl);
         const json = await response.json();

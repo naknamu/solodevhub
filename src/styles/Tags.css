@@ -1,6 +1,6 @@
 .tags .container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: var(--pad-4);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: var(--pad-4);
 }

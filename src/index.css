@@ -233,7 +233,7 @@ textarea {
   inset: 0;
   visibility: hidden;
   transform: translateX(100%);
-  transition: .5s cubic-bezier(1,0,.3,.7);
+  transition: 0.5s cubic-bezier(1, 0, 0.3, 0.7);
 }
 
 .mobile-nav.active {
