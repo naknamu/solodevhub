@@ -32,8 +32,4 @@ jobs:
           clean: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-<<<<<<< HEAD
           REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
-=======
-          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
->>>>>>> 01d70de (Updated to use version 16 of node)
