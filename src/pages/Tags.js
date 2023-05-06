@@ -7,7 +7,7 @@ const Tags = () => {
   useEffect(() => {
     const fetchTags = async () => {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/tags/`
+        `https://blog-api-production-189.up.railway.app/api/tags/`
       );
       const data = await response.json();
 

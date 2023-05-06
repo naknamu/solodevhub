@@ -7,7 +7,7 @@ const Categories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/categories/`
+        `https://blog-api-production-189.up.railway.app/api/categories/`
       );
       const data = await response.json();
 

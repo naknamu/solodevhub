@@ -10,7 +10,7 @@ const CategoryDetail = () => {
   useEffect(() => {
     const fetchCategoryDetails = async () => {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/categories/${categoryid}`
+        `https://blog-api-production-189.up.railway.app/api/categories/${categoryid}`
       );
       const data = await response.json();
 

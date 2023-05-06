@@ -16,7 +16,7 @@ const CommentForm = ({ postid, fetchComments }) => {
     const comment = { name, message };
 
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/api/posts/${postid}/comment/create`,
+      `https://blog-api-production-189.up.railway.app/api/posts/${postid}/comment/create`,
       {
         method: "POST",
         body: JSON.stringify(comment),

@@ -12,7 +12,7 @@ const BlogPost = ({ postid }) => {
     const fetchBlogDetail = async () => {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_API_URL}/api/posts/${postid}`
+          `https://blog-api-production-189.up.railway.app/api/posts/${postid}`
         );
         const data = await response.json();
         setBlogPostDetail(data);

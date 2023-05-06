@@ -9,7 +9,7 @@ const Comment = ({ postid }) => {
   const fetchComments = async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/posts/${postid}/comments`
+        `https://blog-api-production-189.up.railway.app/api/posts/${postid}/comments`
       );
       const data = await response.json();
       setComments(data);
