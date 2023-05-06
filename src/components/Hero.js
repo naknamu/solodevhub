@@ -9,7 +9,7 @@ import {
 } from "react-share";
 
 const Hero = forwardRef(({ scrollToChild }, ref) => {
-  const shareUrl = "https://www.naknamu.com/";
+  const shareUrl = "https://www.solodevhub.com/";
 
   return (
     <div className="hero" ref={ref}>
