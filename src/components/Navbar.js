@@ -15,6 +15,7 @@ const Navbar = () => {
   return (
     <header className="header">
       <div className="container">
+        <nav className="navbar">
         <Link to="/" className="logo-wrapper">
           <span className="material-symbols-outlined">edit_square</span>
           <h1 className="logo-text h1">SoloDevHub</h1>
@@ -51,6 +52,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+        </nav>
       </div>
     </header>
   );
