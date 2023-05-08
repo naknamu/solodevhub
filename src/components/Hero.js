@@ -39,15 +39,15 @@ const Hero = forwardRef(({ scrollToChild }, ref) => {
           <p className="h4 text">
             Help us by sharing this site to your friends:{" "}
           </p>
-          <div className="icon">
+          <div className="icon-wrapper">
             <FacebookShareButton url={shareUrl}>
-              <BsFacebook />
+              <BsFacebook className="icon" />
             </FacebookShareButton>
             <TwitterShareButton url={shareUrl}>
-              <BsTwitter />
+              <BsTwitter className="icon" />
             </TwitterShareButton>
             <RedditShareButton url={shareUrl}>
-              <BsReddit />
+              <BsReddit className="icon" />
             </RedditShareButton>
           </div>
         </div>
