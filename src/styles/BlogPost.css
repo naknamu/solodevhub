@@ -38,4 +38,5 @@
   font-size: var(--fs-0);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: var(--pad-3);
+  margin-top: var(--pad-1);
 }

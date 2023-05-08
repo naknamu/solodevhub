@@ -602,7 +602,7 @@ header .flex-wrapper {
     /** typography **/
 
     --fs-base: 1rem;
-    --fs-0: 1.5rem;
+    --fs-0: 1.3rem;
     --fs-1: 3rem;
     --fs-3: 2rem;
     --fs-4: 1.125rem;
@@ -612,7 +612,7 @@ header .flex-wrapper {
   /** REUSED STYLE **/
 
   .container {
-    max-width: 1150px;
+    max-width: 1000px;
   }
 
   /** HEADER **/
@@ -645,21 +645,5 @@ header .flex-wrapper {
 
   .blog-text {
     font-size: var(--fs-4);
-  }
-}
-
-/** responsive for large than 1400px screen **/
-
-@media (min-width: 1400px) {
-  /** REUSED STYLE **/
-
-  .container {
-    max-width: 1320px;
-  }
-
-  /** HOME **/
-
-  .blog-text {
-    font-size: 1.3rem;
   }
 }
