@@ -30,6 +30,26 @@ const Navbar = () => {
           </span>
         </div>
 
+        <div className="flex-wrapper">
+
+          <ul className="desktop-nav">
+
+            <li>
+              <Link to="/" className="nav-link">Home</Link>
+            </li>
+
+            <li>
+              <Link to="/categories" className="nav-link">Categories</Link>
+            </li>
+
+            <li>
+              <Link to="/tags" className="nav-link">Tags</Link>
+            </li>
+
+          </ul>
+
+        </div>
+
         <div className={`mobile-nav ${menu ? "active" : ""}`}>
           <div className="mobile-nav-wrapper">
             <div

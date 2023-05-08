@@ -1,6 +1,10 @@
+.blog-post {
+  margin-top: var(--pad-1);
+}
+
 .blog-head-wrapper {
   display: grid;
-  gap: 15px;
+  gap: 1rem;
 }
 
 .blog-title {
@@ -12,7 +16,7 @@
 .blog-subtitle {
   display: flex;
   align-items: center;
-  color: var(--foreground-tertiary);
+  color: var(--foreground-secondary);
   font-size: var(--fs-5);
   gap: 5px;
 }
@@ -32,6 +36,6 @@
 
 .blog-content {
   font-size: var(--fs-0);
-  font-family: var(--ff-ibm-plex);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: var(--pad-3);
 }
