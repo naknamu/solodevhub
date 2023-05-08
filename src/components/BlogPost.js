@@ -13,9 +13,7 @@ const BlogPost = ({ postid }) => {
     const apiUrl = config.apiUrl;
     const fetchBlogDetail = async () => {
       try {
-        const response = await fetch(
-          `${apiUrl}/posts/${postid}`
-        );
+        const response = await fetch(`${apiUrl}/posts/${postid}`);
         const data = await response.json();
         setBlogPostDetail(data);
       } catch (err) {

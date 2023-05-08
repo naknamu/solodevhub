@@ -11,9 +11,7 @@ const CategoryDetail = () => {
   useEffect(() => {
     const fetchCategoryDetails = async () => {
       const apiUrl = config.apiUrl;
-      const response = await fetch(
-        `${apiUrl}/categories/${categoryid}`
-      );
+      const response = await fetch(`${apiUrl}/categories/${categoryid}`);
       const data = await response.json();
 
       setCategory(data.category);

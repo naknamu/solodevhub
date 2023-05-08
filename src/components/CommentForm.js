@@ -18,16 +18,13 @@ const CommentForm = ({ postid, fetchComments }) => {
 
     const apiUrl = config.apiUrl;
 
-    const response = await fetch(
-      `${apiUrl}/posts/${postid}/comment/create`,
-      {
-        method: "POST",
-        body: JSON.stringify(comment),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(`${apiUrl}/posts/${postid}/comment/create`, {
+      method: "POST",
+      body: JSON.stringify(comment),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const data = await response.json();
 
     if (response.ok) {

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import CategoryButton from "./CategoryButton";
 
 const BlogPostCard = ({ blogPost }) => {
-
   const MAX_PREVIEW_LENGTH = 200; // maximum length of the preview content
 
   // extract the preview content from the full content
@@ -14,7 +13,11 @@ const BlogPostCard = ({ blogPost }) => {
   return (
     <div className="blogPost-card">
       <div className="blog-card-banner">
-        <img src={blogPost.image_url === undefined ? "#" : blogPost.image_url} alt="Blog Post Banner" className="blog-banner-img" />
+        <img
+          src={blogPost.image_url === undefined ? "#" : blogPost.image_url}
+          alt="Blog Post Banner"
+          className="blog-banner-img"
+        />
       </div>
 
       <div className="blog-content-wrapper">
@@ -25,9 +28,7 @@ const BlogPostCard = ({ blogPost }) => {
           <p>{blogPost.url}</p>
         </Link>
 
-        <p className="blog-text">
-          {previewContent}....
-        </p>
+        <p className="blog-text">{previewContent}....</p>
 
         <div className="wrapper">
           <div className="h4">{blogPost.author}</div>

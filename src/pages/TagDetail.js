@@ -10,11 +10,8 @@ const TagDetail = () => {
 
   useEffect(() => {
     const fetchTagDetails = async () => {
-
       const apiUrl = config.apiUrl;
-      const response = await fetch(
-        `${apiUrl}/tags/${tagid}`
-      );
+      const response = await fetch(`${apiUrl}/tags/${tagid}`);
       const data = await response.json();
 
       setTag(data.tag);

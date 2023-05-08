@@ -10,9 +10,8 @@ const Home = () => {
   const childRef = useRef(null);
 
   useEffect(() => {
-
     const apiUrl = config.apiUrl;
-    
+
     const fetchBlogPost = async () => {
       try {
         const response = await fetch(`${apiUrl}/posts/published`);

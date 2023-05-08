@@ -8,9 +8,7 @@ const Categories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       const apiUrl = config.apiUrl;
-      const response = await fetch(
-        `${apiUrl}/categories/`
-      );
+      const response = await fetch(`${apiUrl}/categories/`);
       const data = await response.json();
 
       setCategories(data);

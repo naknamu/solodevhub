@@ -19,19 +19,19 @@ function App() {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Navbar />
         <ScrollToTop>
-        <div className="pages">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/posts/:postid" element={<BlogPostDetail />} />
-            <Route
-              path="/categories/:categoryid"
-              element={<CategoryDetail />}
-            />
-            <Route path="/tags/:tagid" element={<TagDetail />} />
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/tags" element={<Tags />} />
-          </Routes>
-        </div>
+          <div className="pages">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/posts/:postid" element={<BlogPostDetail />} />
+              <Route
+                path="/categories/:categoryid"
+                element={<CategoryDetail />}
+              />
+              <Route path="/tags/:tagid" element={<TagDetail />} />
+              <Route path="/categories" element={<Categories />} />
+              <Route path="/tags" element={<Tags />} />
+            </Routes>
+          </div>
         </ScrollToTop>
         <Footer />
       </BrowserRouter>

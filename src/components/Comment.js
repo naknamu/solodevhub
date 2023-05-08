@@ -10,9 +10,7 @@ const Comment = ({ postid }) => {
   const fetchComments = async () => {
     try {
       const apiUrl = config.apiUrl;
-      const response = await fetch(
-        `${apiUrl}/posts/${postid}/comments`
-      );
+      const response = await fetch(`${apiUrl}/posts/${postid}/comments`);
       const data = await response.json();
       setComments(data);
     } catch (err) {
