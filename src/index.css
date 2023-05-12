@@ -5,6 +5,7 @@
 @import "./styles/BlogListCard.css";
 @import "./styles/Categories.css";
 @import "./styles/Tags.css";
+@import "./styles/MarkdownPreview.css";
 
 /** CUSTOM PROPERTY **/
 
@@ -478,6 +479,18 @@ header .flex-wrapper {
 }
 
 /*** MEDIA QUERIES ***/
+
+@media (max-width: 550px) {
+
+  .markdown-wrapper img {
+    width: 100%;
+  }
+
+  .markdown-wrapper pre {
+    overflow-x: scroll;
+    max-width: 25em;
+  }
+}
 
 /** responsive for larger than 550px screen **/
 

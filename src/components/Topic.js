@@ -1,17 +1,15 @@
 import BlogListCard from "../components/BlogListCard";
+import MarkdownPreview from "./MarkdownPreview";
 
 const Topic = ({ topic, topicName, blogPosts }) => {
-
-  // Create a new DOMParser
-  const parser = new DOMParser();
 
   return (
     <div className="topic-detail">
       <div className="container">
+
         <h1 className="topic-title h1">{topic.name}</h1>
-        <p style={{ whiteSpace: 'pre-line' }}>
-          {parser.parseFromString(topic.detail, 'text/html').documentElement.textContent}
-        </p>
+        <MarkdownPreview markdown={topic.detail} />
+        
         <h2 className="h2">Blog Posts</h2>
         <p>These are the blog posts under this {topicName}:</p>
         <ul className="blogList-wrapper">

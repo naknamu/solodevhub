@@ -1,0 +1,17 @@
+/* .markdown-wrapper {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+.markdown-wrapper p {
+    margin-block: 1em;
+}
+
+.markdown-wrapper li {
+    list-style: initial;
+    margin-inline-start: 1em;
+}
+
+.markdown-wrapper a {
+    text-decoration: underline;
+    color: blue;
+}
