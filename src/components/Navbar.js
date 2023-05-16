@@ -17,8 +17,7 @@ const Navbar = () => {
       <div className="container">
         <nav className="navbar">
           <Link to="/" className="logo-wrapper">
-            <span className="material-symbols-outlined">edit_square</span>
-            <h1 className="logo-text h1">SoloDevHub</h1>
+            <img width={150} src="logo-no-background.png" alt="solodevhub logo"/>
           </Link>
 
           <div className="nav-btn">
