@@ -36,7 +36,11 @@ const BlogPost = ({ postid }) => {
   return (
     <div className="blog-post">
       <div className="container">
-        <div className="blog-head-wrapper">
+        <div className="blog-wrapper">
+          <div className="banner-wrapper">
+            <img src={blogPostDetail.image_url} alt={`${blogPostDetail.title} banner`} />
+          </div>
+
           <CategoryButton category={blogPostDetail.category} />
 
           <div className="blog-title">{blogPostDetail.title}</div>

@@ -22,7 +22,8 @@
   --foreground-secondary: hsl(216, 15%, 52%);
   --foreground-tertiary: hsl(214, 20%, 69%);
 
-  --accent: hsl(229, 76%, 66%);
+  /* --accent: hsl(229, 76%, 66%); */
+  --accent: #0074d9;
 }
 
 :root {
@@ -103,6 +104,10 @@ textarea {
 img,
 button {
   display: block;
+}
+
+img {
+  max-width: 100%;
 }
 
 /** BASE STYLE **/
@@ -487,6 +492,13 @@ header .flex-wrapper {
   }
 
   .markdown-wrapper pre {
+    overflow-x: scroll;
+    max-width: 25rem;
+  }
+
+  /** MdPreview **/
+
+  .wmde-markdown pre {
     overflow-x: scroll;
     max-width: 25em;
   }

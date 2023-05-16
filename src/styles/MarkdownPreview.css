@@ -1,6 +1,7 @@
-/* .markdown-wrapper {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-} */
+.markdown-wrapper {
+    font-family: var(--ff-segoe);
+    font-size: var(--fs-0);
+}
 
 .markdown-wrapper p {
     margin-block: 1em;
