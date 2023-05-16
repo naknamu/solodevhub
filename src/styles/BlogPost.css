@@ -7,6 +7,12 @@
   gap: 1rem;
 }
 
+.banner-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
 .blog-title {
   font-weight: 700;
   font-size: var(--fs-1);

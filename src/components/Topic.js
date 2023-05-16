@@ -1,5 +1,5 @@
 import BlogListCard from "../components/BlogListCard";
-import MarkdownPreview from "./MarkdownPreview";
+import MarkdownPreview from "./MdPreview";
 
 const Topic = ({ topic, topicName, blogPosts }) => {
 

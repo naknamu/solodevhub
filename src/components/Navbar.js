@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="container">
         <nav className="navbar">
           <Link to="/" className="logo-wrapper">
-            <img width={150} src="logo-no-background.png" alt="solodevhub logo"/>
+            <img width={150} src="logo-no-background.png" alt="solodevhub logo" loading="lazy"/>
           </Link>
 
           <div className="nav-btn">

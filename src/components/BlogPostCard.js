@@ -17,6 +17,7 @@ const BlogPostCard = ({ blogPost }) => {
           src={blogPost.image_url === undefined ? "#" : blogPost.image_url}
           alt="Blog Post Banner"
           className="blog-banner-img"
+          loading="lazy"
         />
       </div>
 

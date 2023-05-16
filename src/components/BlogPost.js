@@ -2,6 +2,7 @@ import CategoryButton from "./CategoryButton";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import config from "../config/config";
+import MarkdownPreview from "./MdPreview";
 
 const { DateTime } = require("luxon");
 
@@ -38,7 +39,7 @@ const BlogPost = ({ postid }) => {
       <div className="container">
         <div className="blog-wrapper">
           <div className="banner-wrapper">
-            <img src={blogPostDetail.image_url} alt={`${blogPostDetail.title} banner`} />
+            <img src={blogPostDetail.image_url} alt={`${blogPostDetail.title} banner`} loading="lazy" />
           </div>
 
           <CategoryButton category={blogPostDetail.category} />
@@ -64,7 +65,7 @@ const BlogPost = ({ postid }) => {
             ))}
           </div>
 
-          <div className="blog-content">{blogPostDetail.content}</div>
+          <div className="blog-content"><MarkdownPreview markdown={blogPostDetail.content} /></div>
         </div>
       </div>
     </div>
