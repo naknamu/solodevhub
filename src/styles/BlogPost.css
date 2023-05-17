@@ -1,7 +1,3 @@
-/* .blog-post {
-  margin-top: var(--pad-1);
-} */
-
 .blog-wrapper {
   display: grid;
   gap: 1rem;
