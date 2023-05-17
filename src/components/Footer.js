@@ -6,8 +6,7 @@ const Footer = () => {
       <div className="container">
         <div className="wrapper">
           <Link to="/" className="logo-wrapper">
-            <span className="material-symbols-outlined">edit_square</span>
-            <h1 className="logo-text h1">SoloDevHub</h1>
+            <img width={150} src="logo-no-background.png" alt="solodevhub logo" loading="lazy"/>
           </Link>
           <p className="footer-text">
             Let's level up your skills and achieve your goals together.
