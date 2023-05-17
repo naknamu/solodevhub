@@ -4,5 +4,5 @@
 }
 
 .wmde-markdown li {
-    list-style: initial;
+    list-style: unset;
 }
