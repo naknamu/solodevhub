@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -16,9 +17,8 @@ const Navbar = () => {
     <header className="header">
       <div className="container">
         <nav className="navbar">
-          <Link to="/" className="logo-wrapper">
-            <img width={150} src="logo-no-background.png" alt="solodevhub logo" loading="lazy"/>
-          </Link>
+          
+          <Logo />
 
           <div className="nav-btn">
             <span

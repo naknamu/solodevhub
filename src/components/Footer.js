@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
         <div className="wrapper">
-          <Link to="/" className="logo-wrapper">
-            <img width={150} src="logo-no-background.png" alt="solodevhub logo" loading="lazy"/>
-          </Link>
+          
+          <Logo />
+          
           <p className="footer-text">
             Let's level up your skills and achieve your goals together.
           </p>
