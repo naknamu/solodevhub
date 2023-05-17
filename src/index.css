@@ -227,8 +227,8 @@ header .flex-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  color: var(--accent);
+  /* gap: 5px;
+  color: var(--accent); */
 }
 
 .logo-text {
@@ -585,7 +585,6 @@ header .flex-wrapper {
 
   .footer .logo-wrapper {
     justify-content: flex-start;
-    margin-bottom: 0;
   }
 
   .footer-text {
