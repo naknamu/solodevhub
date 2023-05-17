@@ -9,6 +9,7 @@ const BlogPostCard = ({ blogPost }) => {
   // extract the preview content from the full content
   const previewContent = blogPost.content.substring(0, MAX_PREVIEW_LENGTH);
 
+  // Navigate to Blog Detail Page
   const handleClick = () => {
     const urlRegex = /\s/g;
     const url_title = blogPost.title.toLowerCase().replace(urlRegex, '-');
@@ -17,7 +18,7 @@ const BlogPostCard = ({ blogPost }) => {
   }
 
   return (
-    <div className="blogPost-card">
+    <div className="blogPost-card" onClick={handleClick}>
       <div className="blog-card-banner">
         <img
           src={blogPost.image_url === undefined ? "#" : blogPost.image_url}
