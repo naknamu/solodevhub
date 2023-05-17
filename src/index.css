@@ -530,9 +530,9 @@ header .flex-wrapper {
 
   /** BLOGPOST DETAILS **/
 
-  .blog-post {
+  /* .blog-post {
     margin-top: var(--pad-2);
-  }
+  } */
 }
 
 /** responsive for larger than 650px screen **/
