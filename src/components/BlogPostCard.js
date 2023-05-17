@@ -1,14 +1,20 @@
-// date fns
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
-
-import { Link } from "react-router-dom";
 import CategoryButton from "./CategoryButton";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import { useNavigate } from "react-router";
 
 const BlogPostCard = ({ blogPost }) => {
   const MAX_PREVIEW_LENGTH = 200; // maximum length of the preview content
+  const navigate =  useNavigate();
 
   // extract the preview content from the full content
   const previewContent = blogPost.content.substring(0, MAX_PREVIEW_LENGTH);
+
+  const handleClick = () => {
+    const urlRegex = /\s/g;
+    const url_title = blogPost.title.toLowerCase().replace(urlRegex, '-');
+
+    navigate(`/posts/${blogPost._id}/${url_title}`);
+  }
 
   return (
     <div className="blogPost-card">
@@ -18,16 +24,14 @@ const BlogPostCard = ({ blogPost }) => {
           alt="Blog Post Banner"
           className="blog-banner-img"
           loading="lazy"
+          onClick={() => handleClick()}
         />
       </div>
 
       <div className="blog-content-wrapper">
         <CategoryButton category={blogPost.category} />
 
-        <Link to={`/posts/${blogPost._id}`}>
-          <h3 className="h3">{blogPost.title}</h3>
-          <p>{blogPost.url}</p>
-        </Link>
+        <h3 className="h3" onClick={() => handleClick()}>{blogPost.title}</h3>
 
         <p className="blog-text">{previewContent}....</p>
 
