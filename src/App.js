@@ -28,7 +28,12 @@ function App() {
                 path="/categories/:categoryid"
                 element={<CategoryDetail />}
               />
+              <Route
+                path="/categories/:categoryid/:title"
+                element={<CategoryDetail />}
+              />
               <Route path="/tags/:tagid" element={<TagDetail />} />
+              <Route path="/tags/:tagid/:title" element={<TagDetail />} />
               <Route path="/categories" element={<Categories />} />
               <Route path="/tags" element={<Tags />} />
             </Routes>

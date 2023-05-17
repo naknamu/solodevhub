@@ -1,5 +1,5 @@
 import CategoryButton from "./CategoryButton";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import config from "../config/config";
 import MarkdownPreview from "./MdPreview";
@@ -8,6 +8,7 @@ const { DateTime } = require("luxon");
 
 const BlogPost = ({ postid }) => {
   const [blogPostDetail, setBlogPostDetail] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch data from blog api
@@ -34,6 +35,15 @@ const BlogPost = ({ postid }) => {
     );
   }
 
+  // Handle tag click
+  const handleClick = (tag) => {
+    const urlRegex = /\s/g;
+    const url_title = tag.name.toLowerCase().replace(urlRegex, '-');
+
+    navigate(`/tags/${tag._id}/what-is-${url_title}`);
+  }
+
+
   return (
     <div className="blog-post">
       <div className="container">
@@ -59,8 +69,8 @@ const BlogPost = ({ postid }) => {
 
           <div className="tag-wrapper">
             {blogPostDetail.tags.map((tag) => (
-              <button className="blog-tags text-tiny" key={tag._id}>
-                <Link to={`/tags/${tag._id}`}>#{tag.name}</Link>
+              <button className="blog-tags text-tiny" key={tag._id} onClick={() => handleClick(tag)}>
+                #{tag.name}
               </button>
             ))}
           </div>
