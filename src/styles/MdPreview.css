@@ -1,5 +1,7 @@
 /** Md Preview **/
-.wmde-markdown p {
+.wmde-markdown p,
+.wmde-markdown a 
+{
     font-size: var(--fs-0);
 }
 

@@ -1,5 +1,6 @@
 .comment {
-  margin-bottom: var(--pad-3);
+  padding-bottom: var(--pad-3);
+  background: var(--background-secondary);
 }
 
 .comment .container {
@@ -54,6 +55,7 @@ textarea {
   border-radius: var(--radius-6);
   gap: 10px;
   box-shadow: var(--shadow-4);
+  background: var(--background-primary);
 }
 
 .comment-head {

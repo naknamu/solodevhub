@@ -98,6 +98,9 @@ textarea {
   font: inherit;
   border: none;
   background: none;
+}
+
+button {
   cursor: pointer;
 }
 
@@ -376,6 +379,7 @@ header .flex-wrapper {
   margin-block-end: 20px;
   border-radius: var(--radius-8);
   box-shadow: var(--shadow-4);
+  cursor: pointer;
 }
 
 .blogPost-card:hover {
@@ -684,5 +688,22 @@ header .flex-wrapper {
 
   .blog-text {
     font-size: var(--fs-4);
+  }
+
+  /** Blog Post **/
+  .blog-post {
+    background: var(--action-secondary);
+    margin: 0;
+    padding-block: var(--pad-2);
+  }
+
+  .blog-post .container {
+    background: var(--background-primary);
+    max-width: 800px;
+  }
+
+  /** Comment Section **/
+  .comment .container {
+    max-width: 800px;
   }
 }
