@@ -521,6 +521,13 @@ header .flex-wrapper {
     height: 100%;
     object-fit: cover;
   }
+
+  /** MdPreview **/
+
+  .wmde-markdown pre {
+    overflow-x: scroll;
+    max-width: 35rem;
+  }
 }
 
 /** responsive for larger than 650px screen **/
@@ -587,6 +594,13 @@ header .flex-wrapper {
 
   .container {
     max-width: 800px;
+  }
+
+  /** MdPreview **/
+
+  .wmde-markdown pre {
+    overflow-x: auto;
+    max-width: 40rem;
   }
 }
 
