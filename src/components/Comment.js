@@ -2,6 +2,23 @@ import { useState, useEffect } from "react";
 import CommentCard from "./CommentCard";
 import CommentForm from "./CommentForm";
 import config from "../config/config";
+import styled from "styled-components";
+
+const CommentStyled = styled.div`
+  padding-bottom: var(--pad-3);
+  background: var(--background-secondary);
+
+  .container {
+    display: grid;
+    gap: 15px;
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 800px;
+    }
+  }
+`;
 
 const Comment = ({ postid }) => {
   const [comments, setComments] = useState(null);
@@ -24,7 +41,7 @@ const Comment = ({ postid }) => {
   }, [postid]);
 
   return (
-    <div className="comment">
+    <CommentStyled>
       <CommentForm postid={postid} fetchComments={fetchComments} />
 
       <div className="container">
@@ -37,7 +54,7 @@ const Comment = ({ postid }) => {
             <CommentCard comment={comment} key={comment._id} />
           ))}
       </div>
-    </div>
+    </CommentStyled>
   );
 };
 

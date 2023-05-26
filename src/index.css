@@ -1,6 +1,4 @@
-@import "./styles/BlogPost.css";
-@import "./styles/Comment.css";
-@import "./styles/Tags.css";
+
 @import "./styles/MdPreview.css";
 
 /** CUSTOM PROPERTY **/
@@ -523,12 +521,6 @@ header .flex-wrapper {
     height: 100%;
     object-fit: cover;
   }
-
-  /** BLOGPOST DETAILS **/
-
-  .blog-post {
-    margin-top: var(--pad-1);
-  }
 }
 
 /** responsive for larger than 650px screen **/
@@ -586,24 +578,6 @@ header .flex-wrapper {
   .footer-text {
     margin: 0;
   }
-
-  /** TAGS **/
-
-  .tags .container {
-    margin-top: var(--pad-2);
-  }
-
-  /** TOPIC DETAIL **/
-
-  .topic-detail {
-    margin-top: var(--pad-2);
-  }
-
-  /** BLOGPOST DETAIL **/
-
-  .blog-subtitle {
-    font-size: var(--fs-4);
-  }
 }
 
 /** responsive for larger than 768px screen **/
@@ -613,12 +587,6 @@ header .flex-wrapper {
 
   .container {
     max-width: 800px;
-  }
-
-  /** COMMENT **/
-  .comment-form-title,
-  .comment-title {
-    margin-top: 1rem;
   }
 }
 
@@ -677,20 +645,4 @@ header .flex-wrapper {
     font-size: var(--fs-4);
   }
 
-  /** Blog Post **/
-  .blog-post {
-    background: var(--action-secondary);
-    margin: 0;
-    padding-block: var(--pad-2);
-  }
-
-  .blog-post .container {
-    background: var(--background-primary);
-    max-width: 800px;
-  }
-
-  /** Comment Section **/
-  .comment .container {
-    max-width: 800px;
-  }
 }

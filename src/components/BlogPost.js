@@ -3,8 +3,76 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import config from "../config/config";
 import MarkdownPreview from "./MdPreview";
+import styled from "styled-components";
 
 const { DateTime } = require("luxon");
+
+const BlogPostStyled = styled.div`
+
+  @media (min-width: 650px) {
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    background: var(--action-secondary);
+    margin: 0;
+    padding-block: var(--pad-2);
+
+    .container {
+      background: var(--background-primary);
+      max-width: 800px;
+    }
+  }
+`;
+
+const BlogWrapper = styled.div`
+  display: grid;
+  gap: 1rem;
+`;
+
+const BannerWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-block: 1rem;
+`;
+
+const BlogTitle = styled.div`
+  font-weight: 700;
+  font-size: var(--fs-1);
+  line-height: 1.4;
+`;
+
+const BlogSubtitles = styled.div`
+  display: flex;
+  align-items: center;
+  color: var(--foreground-secondary);
+  font-size: var(--fs-5);
+  gap: 5px;
+
+  @media (min-width: 650px) {
+    font-size: var(--fs-4);
+  }
+`;
+
+const TagWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+const BlogTags = styled.div`
+  color: var(--foreground-secondary);
+  cursor: pointer;
+
+  :hover {
+    text-decoration: underline;
+  }
+`;
+
+const BlogContent = styled.div`
+  margin-bottom: var(--pad-3);
+  margin-top: var(--pad-1);
+`;
+
 
 const BlogPost = ({ postid }) => {
   const [blogPostDetail, setBlogPostDetail] = useState(null);
@@ -45,17 +113,18 @@ const BlogPost = ({ postid }) => {
 
 
   return (
-    <div className="blog-post">
+    <BlogPostStyled>
       <div className="container">
-        <div className="blog-wrapper">
-          <div className="banner-wrapper">
+        <BlogWrapper>
+          <BannerWrapper>
             <img src={blogPostDetail.image_url} alt={`${blogPostDetail.title} banner`} loading="lazy" />
-          </div>
+          </BannerWrapper>
 
           <CategoryButton category={blogPostDetail.category} />
 
-          <div className="blog-title">{blogPostDetail.title}</div>
-          <div className="blog-subtitle">
+          <BlogTitle>{blogPostDetail.title}</BlogTitle>
+
+          <BlogSubtitles>
             <p className="author">by {blogPostDetail.author}</p>
             <span className="separator"></span>
             <p className="date">
@@ -65,20 +134,20 @@ const BlogPost = ({ postid }) => {
             </p>
             <span className="separator"></span>
             <p>{blogPostDetail.minute_read} min read</p>
-          </div>
+          </BlogSubtitles>
 
-          <div className="tag-wrapper">
+          <TagWrapper>
             {blogPostDetail.tags.map((tag) => (
-              <button className="blog-tags text-tiny" key={tag._id} onClick={() => handleClick(tag)}>
+              <BlogTags className="text-tiny" key={tag._id} onClick={() => handleClick(tag)}>
                 #{tag.name}
-              </button>
+              </BlogTags>
             ))}
-          </div>
+          </TagWrapper>
 
-          <div className="blog-content"><MarkdownPreview markdown={blogPostDetail.content} /></div>
-        </div>
+          <BlogContent><MarkdownPreview markdown={blogPostDetail.content} /></BlogContent>
+        </BlogWrapper>
       </div>
-    </div>
+    </BlogPostStyled>
   );
 };
 
