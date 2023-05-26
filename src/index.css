@@ -1,6 +1,5 @@
 @import "./styles/BlogPost.css";
 @import "./styles/Comment.css";
-@import "./styles/Topic.css";
 @import "./styles/TopicList.css";
 @import "./styles/Categories.css";
 @import "./styles/Tags.css";
@@ -504,11 +503,6 @@ header .flex-wrapper {
 /** responsive for larger than 550px screen **/
 
 @media (min-width: 550px) {
-  :root {
-    /* typography */
-
-    --fs-base: 0.9rem;
-  }
 
   /** HOME **/
 
