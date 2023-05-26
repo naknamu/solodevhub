@@ -4,11 +4,22 @@ import MarkdownPreview from "./MdPreview";
 
 const TopicDetail = styled.div`
 
-  margin-block: 2rem;
-
   .container {
     display: grid;
     gap: 1rem;
+    background: var(--background-primary);
+    border-radius: var(--radius-6);
+    padding-block: var(--pad-2);
+  }
+
+  @media (min-width: 1024px) {
+
+    background: var(--background-secondary);
+    padding-block: var(--pad-2);
+
+    .container {
+      max-width: 700px;
+    }
   }
 
 `;
@@ -16,7 +27,6 @@ const TopicDetail = styled.div`
 const BloglistWrapper = styled.ul`
   display: grid;
   gap: 1.125rem;
-  margin-bottom: var(--pad-3);
 `;
 
 const Topic = ({ topic, topicName, blogPosts }) => {

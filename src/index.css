@@ -1,7 +1,5 @@
 @import "./styles/BlogPost.css";
 @import "./styles/Comment.css";
-@import "./styles/TopicList.css";
-@import "./styles/Categories.css";
 @import "./styles/Tags.css";
 @import "./styles/MdPreview.css";
 
@@ -587,12 +585,6 @@ header .flex-wrapper {
 
   .footer-text {
     margin: 0;
-  }
-
-  /** CATEGORIES **/
-
-  .categories .container {
-    margin-top: var(--pad-2);
   }
 
   /** TAGS **/

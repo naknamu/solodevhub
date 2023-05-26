@@ -1,4 +1,20 @@
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
+const TopicListCard = styled.div`
+  background-color: var(--background-secondary);
+  box-shadow: var(--shadow-3);
+  border-radius: var(--radius-6);
+  padding: 12px;
+  font-weight: 500;
+  cursor: pointer;
+
+  :hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-5);
+    text-decoration: underline;
+  }
+`;
 
 const TopicList = ({ topic, topicLists }) => {
   const navigate = useNavigate();
@@ -11,9 +27,9 @@ const TopicList = ({ topic, topicLists }) => {
   }
 
   return (
-    <li className="topicList-card" onClick={handleClick}>
+    <TopicListCard onClick={handleClick}>
       {topic.name}
-    </li>
+    </TopicListCard>
   );
 };
 

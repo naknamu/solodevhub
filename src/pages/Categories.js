@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import TopicList from "../components/TopicList";
 import config from "../config/config";
+import { AllTopic, TopicWrapper, TopicListWrapper } from "../components/StyledComponents";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -18,21 +19,24 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className="categories">
+    <AllTopic>
       <div className="container">
-        <h1 className="h1">All categories</h1>
-        <ul className="topicList-wrapper">
-          {categories &&
-            categories.map((category) => (
-              <TopicList
-                key={category._id}
-                topic={category}
-                topicLists={"categories"}
-              />
-            ))}
-        </ul>
+        <TopicWrapper>
+          <h1 className="h1">Categories</h1>
+          <p>Click category to view details:</p>
+          <TopicListWrapper>
+            {categories &&
+              categories.map((category) => (
+                <TopicList
+                  key={category._id}
+                  topic={category}
+                  topicLists={"categories"}
+                />
+              ))}
+          </TopicListWrapper>
+        </TopicWrapper>
       </div>
-    </div>
+    </AllTopic>
   );
 };
 
