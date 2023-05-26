@@ -18,7 +18,7 @@ const BlogPostCard = ({ blogPost }) => {
   }
 
   return (
-    <div className="blogPost-card" onClick={handleClick}>
+    <div className="blogPost-card">
       <div className="blog-card-banner">
         <img
           src={blogPost.image_url === undefined ? "#" : blogPost.image_url}
