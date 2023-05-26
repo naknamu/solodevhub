@@ -12,8 +12,8 @@ const BlogListCard = ({ blogPost }) => {
   }
 
   return (
-    <li className="blogList-card">
-      <div className="blogList-card-wrapper" onClick={handleClick}>
+    <li className="blogList-card" onClick={handleClick}>
+      <div className="blogList-card-wrapper">
         <div className="blogList-title">
           {blogPost.title}
         </div>

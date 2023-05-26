@@ -3,10 +3,12 @@
   box-shadow: var(--shadow-3);
   border-radius: var(--radius-6);
   padding: 12px;
+  cursor: pointer;
 }
 
 .blogList-card:hover {
   transform: translateY(-5px);
+  box-shadow: var(--shadow-5);
 }
 
 .blogList-card-wrapper {
