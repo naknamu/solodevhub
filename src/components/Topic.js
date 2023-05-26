@@ -18,7 +18,7 @@ const TopicDetail = styled.div`
     padding-block: var(--pad-2);
 
     .container {
-      max-width: 700px;
+      max-width: 800px;
     }
   }
 
