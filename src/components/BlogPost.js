@@ -117,7 +117,7 @@ const BlogPost = ({ postid }) => {
       <div className="container">
         <BlogWrapper>
           <BannerWrapper>
-            <img src={blogPostDetail.image_url} alt={`${blogPostDetail.title} banner`} loading="lazy" />
+            <img src={blogPostDetail.image_url} alt={`${blogPostDetail.title} banner`} loading="lazy" width={384} height={370} />
           </BannerWrapper>
 
           <CategoryButton category={blogPostDetail.category} />
