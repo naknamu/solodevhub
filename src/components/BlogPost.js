@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import config from "../config/config";
 import MarkdownPreview from "./MdPreview";
 import styled from "styled-components";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const { DateTime } = require("luxon");
 
@@ -117,7 +118,8 @@ const BlogPost = ({ postid }) => {
       <div className="container">
         <BlogWrapper>
           <BannerWrapper>
-            <img src={blogPostDetail.image_url} alt={`${blogPostDetail.title} banner`} loading="lazy" width={384} height={370} />
+            {/* <img src={blogPostDetail.image_url} alt={`${blogPostDetail.title} banner`} loading="lazy" width={384} height={370} /> */}
+            <LazyLoadImage src={blogPostDetail.image_url} alt={`${blogPostDetail.title} banner`} width={384} height={370}  />
           </BannerWrapper>
 
           <CategoryButton category={blogPostDetail.category} />
