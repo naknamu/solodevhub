@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import config from "../config/config";
 import MarkdownPreview from "./MdPreview";
 import styled from "styled-components";
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 const { DateTime } = require("luxon");
 
@@ -86,14 +86,10 @@ const BlogPost = ({ postid }) => {
     return response.json();
   }
 
-  const { data, error } = useQuery('blogPosts', fetchPosts);
-
-  if (error) {
-    return <div className="container">Error: {error.message}</div>;
-  }
+  const { data, isLoading, error, isError } = useQuery({ queryKey: ['blogPosts'], queryFn: fetchPosts });
 
   // Render when data is not null
-  if (!data) {
+  if (isLoading) {
     return (
       <BlogPostStyled>
         <div className="container">
@@ -103,6 +99,10 @@ const BlogPost = ({ postid }) => {
     );
   }
 
+  if (isError) {
+    return <div>Error: {error.message}</div>
+  }
+
   // Handle tag click
   const handleClick = (tag) => {
     const urlRegex = /\s/g;
@@ -110,7 +110,6 @@ const BlogPost = ({ postid }) => {
 
     navigate(`/tags/${tag._id}/what-is-${url_title}`);
   }
-
 
   return (
     <BlogPostStyled>
