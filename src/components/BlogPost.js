@@ -86,7 +86,7 @@ const BlogPost = ({ postid }) => {
     return response.json();
   }
 
-  const { data, isLoading, error, isError } = useQuery({ queryKey: ['blogPosts'], queryFn: fetchPosts });
+  const { data, isLoading, error, isError } = useQuery({ queryKey: [`${postid}`], queryFn: fetchPosts });
 
   // Render when data is not null
   if (isLoading) {
