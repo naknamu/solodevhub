@@ -419,7 +419,7 @@ header .flex-wrapper {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: var(--foreground-tertiary);
+  color: var(--foreground-secondary);
   font-size: var(--fs-5);
 }
 
