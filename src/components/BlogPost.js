@@ -1,9 +1,9 @@
 import CategoryButton from "./CategoryButton";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
 import config from "../config/config";
 import MarkdownPreview from "./MdPreview";
 import styled from "styled-components";
+import { useQuery } from 'react-query';
 
 const { DateTime } = require("luxon");
 
@@ -75,31 +75,31 @@ const BlogContent = styled.div`
 
 
 const BlogPost = ({ postid }) => {
-  const [blogPostDetail, setBlogPostDetail] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Fetch data from blog api
-    const apiUrl = config.apiUrl;
-    const fetchBlogDetail = async () => {
-      try {
-        const response = await fetch(`${apiUrl}/posts/${postid}`);
-        const data = await response.json();
-        setBlogPostDetail(data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
+  const fetchPosts = async() => {
+    const response = await fetch(`${config.apiUrl}/posts/${postid}`);
 
-    fetchBlogDetail();
-  }, [postid]);
+    if (!response.ok) {
+      throw new Error('Failed to fetch blog posts');
+    }
+    return response.json();
+  }
 
-  // Render when blogPostDetail is null
-  if (!blogPostDetail) {
+  const { data, error } = useQuery('blogPosts', fetchPosts);
+
+  if (error) {
+    return <div className="container">Error: {error.message}</div>;
+  }
+
+  // Render when data is not null
+  if (!data) {
     return (
-      <div className="loading-message">
-        <div className="container">Fetching blog post...</div>
-      </div>
+      <BlogPostStyled>
+        <div className="container">
+          <div>Fetching blog post...</div>
+        </div>
+      </BlogPostStyled>
     );
   }
 
@@ -117,34 +117,34 @@ const BlogPost = ({ postid }) => {
       <div className="container">
         <BlogWrapper>
           <BannerWrapper>
-            <img src={blogPostDetail.image_url} alt={`${blogPostDetail.title} banner`} loading="lazy" />
+            <img src={data.image_url} alt={`${data.title} banner`} loading="lazy" />
           </BannerWrapper>
 
-          <CategoryButton category={blogPostDetail.category} />
+          <CategoryButton category={data.category} />
 
-          <BlogTitle>{blogPostDetail.title}</BlogTitle>
+          <BlogTitle>{data.title}</BlogTitle>
 
           <BlogSubtitles>
-            <p className="author">by {blogPostDetail.author}</p>
+            <p className="author">by {data.author}</p>
             <span className="separator"></span>
             <p className="date">
               {DateTime.fromJSDate(
-                new Date(blogPostDetail.publishedDate)
+                new Date(data.publishedDate)
               ).toLocaleString(DateTime.DATETIME_MED)}
             </p>
             <span className="separator"></span>
-            <p>{blogPostDetail.minute_read} min read</p>
+            <p>{data.minute_read} min read</p>
           </BlogSubtitles>
 
           <TagWrapper>
-            {blogPostDetail.tags.map((tag) => (
+            {data.tags.map((tag) => (
               <BlogTags className="text-tiny" key={tag._id} onClick={() => handleClick(tag)}>
                 #{tag.name}
               </BlogTags>
             ))}
           </TagWrapper>
 
-          <BlogContent><MarkdownPreview markdown={blogPostDetail.content} /></BlogContent>
+          <BlogContent><MarkdownPreview markdown={data.content} /></BlogContent>
         </BlogWrapper>
       </div>
     </BlogPostStyled>
