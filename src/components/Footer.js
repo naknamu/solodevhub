@@ -6,9 +6,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="wrapper">
-          
           <Logo />
-          
+
           <p className="footer-text">
             Let's level up your skills and achieve your goals together.
           </p>

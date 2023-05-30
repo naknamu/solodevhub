@@ -21,16 +21,12 @@ const TopicList = ({ topic, topicLists }) => {
 
   const handleClick = () => {
     const urlRegex = /\s/g;
-    const url_title = topic.name.toLowerCase().replace(urlRegex, '-');
+    const url_title = topic.name.toLowerCase().replace(urlRegex, "-");
 
     navigate(`/${topicLists}/${topic._id}/what-is-${url_title}`);
-  }
+  };
 
-  return (
-    <TopicListCard onClick={handleClick}>
-      {topic.name}
-    </TopicListCard>
-  );
+  return <TopicListCard onClick={handleClick}>{topic.name}</TopicListCard>;
 };
 
 export default TopicList;

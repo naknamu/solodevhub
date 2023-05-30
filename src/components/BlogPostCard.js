@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 
 const BlogPostCard = ({ blogPost }) => {
   const MAX_PREVIEW_LENGTH = 200; // maximum length of the preview content
-  const navigate =  useNavigate();
+  const navigate = useNavigate();
 
   // extract the preview content from the full content
   const previewContent = blogPost.content.substring(0, MAX_PREVIEW_LENGTH);
@@ -12,10 +12,10 @@ const BlogPostCard = ({ blogPost }) => {
   // Navigate to Blog Detail Page
   const handleClick = () => {
     const urlRegex = /\s/g;
-    const url_title = blogPost.title.toLowerCase().replace(urlRegex, '-');
+    const url_title = blogPost.title.toLowerCase().replace(urlRegex, "-");
 
     navigate(`/posts/${blogPost._id}/${url_title}`);
-  }
+  };
 
   return (
     <div className="blogPost-card">
@@ -32,7 +32,9 @@ const BlogPostCard = ({ blogPost }) => {
       <div className="blog-content-wrapper">
         <CategoryButton category={blogPost.category} />
 
-        <h3 className="h3" onClick={() => handleClick()}>{blogPost.title}</h3>
+        <h3 className="h3" onClick={() => handleClick()}>
+          {blogPost.title}
+        </h3>
 
         <p className="blog-text">{previewContent}....</p>
 

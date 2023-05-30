@@ -1,4 +1,3 @@
-
 @import "./styles/MdPreview.css";
 
 /** CUSTOM PROPERTY **/
@@ -173,9 +172,9 @@ img {
   border: 2px solid var(--foreground-secondary);
 }
 
-.btn-secondary:hover { 
-  border-color: var(--accent); 
-  color: var(--accent); 
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .blog-category {
@@ -326,7 +325,7 @@ header .flex-wrapper {
   margin-bottom: 10px;
 }
 
-.social-media .icon-wrapper{
+.social-media .icon-wrapper {
   display: flex;
   gap: 15px;
   justify-content: center;
@@ -487,7 +486,6 @@ header .flex-wrapper {
 /** responsive for smaller than 550px screen **/
 
 @media (max-width: 550px) {
-
   /** MdPreview **/
 
   .wmde-markdown pre {
@@ -499,7 +497,6 @@ header .flex-wrapper {
 /** responsive for larger than 550px screen **/
 
 @media (min-width: 550px) {
-
   /** HOME **/
 
   /** BLOG SECTION **/
@@ -658,5 +655,4 @@ header .flex-wrapper {
   .blog-text {
     font-size: var(--fs-4);
   }
-
 }

@@ -17,7 +17,6 @@ const Navbar = () => {
     <header className="header">
       <div className="container">
         <nav className="navbar">
-          
           <Logo />
 
           <div className="nav-btn">

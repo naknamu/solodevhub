@@ -3,12 +3,11 @@ import { useNavigate } from "react-router-dom";
 import config from "../config/config";
 import MarkdownPreview from "./MdPreview";
 import styled from "styled-components";
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from "@tanstack/react-query";
 
 const { DateTime } = require("luxon");
 
 const BlogPostStyled = styled.div`
-
   @media (min-width: 650px) {
     margin-top: 1rem;
   }
@@ -73,20 +72,22 @@ const BlogContent = styled.div`
   margin-top: var(--pad-1);
 `;
 
-
 const BlogPost = ({ postid }) => {
   const navigate = useNavigate();
 
-  const fetchPosts = async() => {
+  const fetchPosts = async () => {
     const response = await fetch(`${config.apiUrl}/posts/${postid}`);
 
     if (!response.ok) {
-      throw new Error('Failed to fetch blog posts');
+      throw new Error("Failed to fetch blog posts");
     }
     return response.json();
-  }
+  };
 
-  const { data, isLoading, error, isError } = useQuery({ queryKey: [`${postid}`], queryFn: fetchPosts });
+  const { data, isLoading, error, isError } = useQuery({
+    queryKey: [`${postid}`],
+    queryFn: fetchPosts,
+  });
 
   // Render when data is not null
   if (isLoading) {
@@ -100,16 +101,16 @@ const BlogPost = ({ postid }) => {
   }
 
   if (isError) {
-    return <div>Error: {error.message}</div>
+    return <div>Error: {error.message}</div>;
   }
 
   // Handle tag click
   const handleClick = (tag) => {
     const urlRegex = /\s/g;
-    const url_title = tag.name.toLowerCase().replace(urlRegex, '-');
+    const url_title = tag.name.toLowerCase().replace(urlRegex, "-");
 
     navigate(`/tags/${tag._id}/what-is-${url_title}`);
-  }
+  };
 
   return (
     <BlogPostStyled>
@@ -127,9 +128,9 @@ const BlogPost = ({ postid }) => {
             <p className="author">by {data.author}</p>
             <span className="separator"></span>
             <p className="date">
-              {DateTime.fromJSDate(
-                new Date(data.publishedDate)
-              ).toLocaleString(DateTime.DATETIME_MED)}
+              {DateTime.fromJSDate(new Date(data.publishedDate)).toLocaleString(
+                DateTime.DATETIME_MED
+              )}
             </p>
             <span className="separator"></span>
             <p>{data.minute_read} min read</p>
@@ -137,13 +138,19 @@ const BlogPost = ({ postid }) => {
 
           <TagWrapper>
             {data.tags.map((tag) => (
-              <BlogTags className="text-tiny" key={tag._id} onClick={() => handleClick(tag)}>
+              <BlogTags
+                className="text-tiny"
+                key={tag._id}
+                onClick={() => handleClick(tag)}
+              >
                 #{tag.name}
               </BlogTags>
             ))}
           </TagWrapper>
 
-          <BlogContent><MarkdownPreview markdown={data.content} /></BlogContent>
+          <BlogContent>
+            <MarkdownPreview markdown={data.content} />
+          </BlogContent>
         </BlogWrapper>
       </div>
     </BlogPostStyled>

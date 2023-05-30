@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import TopicList from "../components/TopicList";
 import config from "../config/config";
-import { AllTopic, TopicWrapper, TopicListWrapper } from "../components/StyledComponents";
+import {
+  AllTopic,
+  TopicWrapper,
+  TopicListWrapper,
+} from "../components/StyledComponents";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);

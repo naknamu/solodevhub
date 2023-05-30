@@ -1,10 +1,9 @@
 /** Md Preview **/
 .wmde-markdown p,
-.wmde-markdown a 
-{
-    font-size: var(--fs-0);
+.wmde-markdown a {
+  font-size: var(--fs-0);
 }
 
 .wmde-markdown li {
-    list-style: unset;
+  list-style: unset;
 }

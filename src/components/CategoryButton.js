@@ -5,10 +5,10 @@ const CategoryButton = ({ category }) => {
 
   const handleClick = () => {
     const urlRegex = /\s/g;
-    const url_title = category.name.toLowerCase().replace(urlRegex, '-');
+    const url_title = category.name.toLowerCase().replace(urlRegex, "-");
 
     navigate(`/categories/${category._id}/what-is-${url_title}`);
-  }
+  };
 
   return (
     <button className="blog-category text-tiny" onClick={handleClick}>

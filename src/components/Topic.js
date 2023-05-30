@@ -3,7 +3,6 @@ import BlogListCard from "../components/BlogListCard";
 import MarkdownPreview from "./MdPreview";
 
 const TopicDetail = styled.div`
-
   .container {
     display: grid;
     gap: 1rem;
@@ -13,7 +12,6 @@ const TopicDetail = styled.div`
   }
 
   @media (min-width: 1024px) {
-
     background: var(--background-secondary);
     padding-block: var(--pad-2);
 
@@ -21,7 +19,6 @@ const TopicDetail = styled.div`
       max-width: 800px;
     }
   }
-
 `;
 
 const BloglistWrapper = styled.ul`
@@ -30,14 +27,12 @@ const BloglistWrapper = styled.ul`
 `;
 
 const Topic = ({ topic, topicName, blogPosts }) => {
-
   return (
     <TopicDetail>
       <div className="container">
-
         <h1 className="topic-title h1">{topic.name}</h1>
         <MarkdownPreview markdown={topic.detail} />
-        
+
         <h2 className="h2">Blog Posts</h2>
         <h3 className="h3">These are the blog posts under this {topicName}:</h3>
         <BloglistWrapper>

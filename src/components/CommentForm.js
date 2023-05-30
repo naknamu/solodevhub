@@ -31,16 +31,18 @@ const sharedCSS = css`
     outline: none;
     border: 1px solid var(--accent);
   }
-`
+`;
 
 const InputField = styled.input`
   ${sharedCSS}
-  border: 1px solid ${props => (!props.isNameError ? "var(--action-primary)" :  "red") };
+  border: 1px solid ${(props) =>
+    !props.isNameError ? "var(--action-primary)" : "red"};
 `;
 
 const TextareaStyled = styled.textarea`
   ${sharedCSS}
-  border: 1px solid ${props => (!props.isMessageError ? "var(--action-primary)" :  "red") };
+  border: 1px solid ${(props) =>
+    !props.isMessageError ? "var(--action-primary)" : "red"};
   min-height: 120px;
   height: 120px;
   max-height: 240px;
@@ -114,7 +116,7 @@ const CommentForm = ({ postid, fetchComments }) => {
           }}
         >
           <InputField
-            isNameError = {isNameError}
+            isNameError={isNameError}
             type="text"
             name="name"
             id="name"
@@ -125,7 +127,7 @@ const CommentForm = ({ postid, fetchComments }) => {
           <Error>{nameError}</Error>
 
           <TextareaStyled
-            isMessageError = {isMessageError}
+            isMessageError={isMessageError}
             name="message"
             id="message"
             placeholder="Message"

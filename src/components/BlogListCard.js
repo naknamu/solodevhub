@@ -38,17 +38,15 @@ const BlogListCard = ({ blogPost }) => {
 
   const handleClick = () => {
     const urlRegex = /\s/g;
-    const url_title = blogPost.title.toLowerCase().replace(urlRegex, '-');
+    const url_title = blogPost.title.toLowerCase().replace(urlRegex, "-");
 
     navigate(`/posts/${blogPost._id}/${url_title}`);
-  }
+  };
 
   return (
     <BlogList onClick={handleClick}>
       <BlogListWrapper>
-        <BlogListTile>
-          {blogPost.title}
-        </BlogListTile>
+        <BlogListTile>{blogPost.title}</BlogListTile>
         <BlogListDate>
           Published Date:{" "}
           {DateTime.fromJSDate(new Date(blogPost.publishedDate)).toLocaleString(

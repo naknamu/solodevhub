@@ -1,34 +1,35 @@
 import BlogPostCard from "./BlogPostCard";
 import { forwardRef } from "react";
 import config from "../config/config";
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from "@tanstack/react-query";
 
 const Main = forwardRef((props, ref) => {
-
-  const fetchPosts = async() => {
+  const fetchPosts = async () => {
     const response = await fetch(`${config.apiUrl}/posts/published`);
 
     if (!response.ok) {
-      throw new Error('Failed to fetch blog posts');
+      throw new Error("Failed to fetch blog posts");
     }
     return response.json();
-  }
+  };
 
-  const { data, isLoading, error, isError } = useQuery({ queryKey: ['blogPosts'], queryFn: fetchPosts });
+  const { data, isLoading, error, isError } = useQuery({
+    queryKey: ["blogPosts"],
+    queryFn: fetchPosts,
+  });
 
   // Render when data is not null
   if (isLoading) {
     return (
-        <div className="container">
-          <div>Fetching blog post...</div>
-        </div>
+      <div className="container">
+        <div>Fetching blog post...</div>
+      </div>
     );
   }
 
   if (isError) {
-    return <div>Error: {error.message}</div>
+    return <div>Error: {error.message}</div>;
   }
-
 
   return (
     <div className="main" ref={ref}>
