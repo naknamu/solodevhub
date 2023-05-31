@@ -18,8 +18,7 @@ const Hero = forwardRef(({ scrollToChild }, ref) => {
           Welcome to <b>SoloDevHub</b>
         </h1>
         <div className="details">
-          <p className="h3">
-            Discover the world of solo software development as I share insights, tutorials, and career advice exclusively for aspiring solo developers.
+          <p className="h3">Discover the world of solo software development as I share insights, tutorials, and career advice exclusively for aspiring solo developers.
           </p>
         </div>
 
