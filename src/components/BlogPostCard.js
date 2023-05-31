@@ -26,6 +26,8 @@ const BlogPostCard = ({ blogPost }) => {
           className="blog-banner-img"
           loading="lazy"
           onClick={() => handleClick()}
+          width={400}
+          height={400}
         />
       </div>
 
