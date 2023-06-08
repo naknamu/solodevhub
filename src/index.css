@@ -491,7 +491,7 @@ header .flex-wrapper {
 
   .wmde-markdown pre {
     overflow-x: scroll;
-    max-width: 25rem;
+    max-width: 23rem;
   }
 }
 
@@ -652,7 +652,6 @@ header .flex-wrapper {
   }
 
   /** MAIN **/
-
   .blog-text {
     font-size: var(--fs-4);
   }
